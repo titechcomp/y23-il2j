@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>ファイルとフォルダ</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y22-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y22-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y22-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y22-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">ファイルとフォルダ</h1>
+</header>
+<section class="header">
+<a href="/y22-il1j">情報リテラシ第一</a> / <a href="/y22-il2j">情報リテラシ第二</a>
+</section>
+<h1 id="finder-ファイル操作のためのソフト">Finder: ファイル操作のためのソフト</h1>
+<p>ファイルを扱うときは、Dockのなかのニコニコしたアイコンをクリックして開いてください。Finderと呼ばれるファイル操作のためのアプリケーションが起動します。</p>
+<figure>
+<img src="images/1/finder.png" alt="Finder" /><figcaption>Finder</figcaption>
+</figure>
+<h2 id="finder表示状態その-アイコンビュー">Finder表示状態：その１ − アイコンビュー</h2>
+<figure>
+<img src="images/1/finder-view-icons.png" alt="Finderのアイコンビュー" /><figcaption>Finderのアイコンビュー</figcaption>
+</figure>
+<ul>
+<li><p>利点</p>
+<ul>
+<li>特定のフォルダの内容を眺めるときはアイコンが目立つのでわかりやすい。</li>
+</ul></li>
+<li><p>弱点</p>
+<ul>
+<li><p>情報の密度が低いため一覧性に乏しい（フォルダにたくさんのファイルがあると困る）</p></li>
+<li><p>フォルダの親子関係が見難いため迷子になりやすい</p></li>
+</ul></li>
+</ul>
+<h2 id="finder表示状態その-リストビュー">Finder表示状態：その２ − リストビュー</h2>
+<figure>
+<img src="images/1/finder-view-list.png" alt="Finderのリストビュー" /><figcaption>Finderのリストビュー</figcaption>
+</figure>
+<ul>
+<li><p>利点</p>
+<ul>
+<li><p>情報の密度が高い</p></li>
+<li><p>複数のフォルダの内容を同時に見られることもある</p></li>
+</ul></li>
+</ul>
+<h2 id="finder表示状態その-コラムビュー">Finder表示状態：その３ − コラムビュー</h2>
+<ul>
+<li><p>利点</p>
+<ul>
+<li>情報の密度が高い</li>
+</ul></li>
+</ul>
+<figure>
+<img src="images/1/finder-view-column.png" alt="Finderのコラムビュー" /><figcaption>Finderのコラムビュー</figcaption>
+</figure>
+<h1 id="よく使うフォルダ">よく使うフォルダ</h1>
+<ul>
+<li><p>準備</p>
+<p>Finder（Dockのなかのニコニコ）をクリックし、メニューバーの黒リンゴの隣に<strong>Finder</strong>と表示されていることを確認。</p></li>
+<li><p>移動メニューから、必要な項目を選択</p></li>
+</ul>
+<figure>
+<img src="images/1/finder-go.png" alt="よく使うフォルダ" /><figcaption>よく使うフォルダ</figcaption>
+</figure>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>フォルダの名称</th>
+<th>フォルダの役割</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ホーム</td>
+<td>あなたの所有するすべてのファイルが保存されている場所</td>
+</tr>
+<tr class="even">
+<td>デスクトップ</td>
+<td>あなたの所有するファイルのうちデスクトップ画面（画面の背景に表示されている場所）に表示されるものが保管されている場所。ホームフォルダの一部</td>
+</tr>
+<tr class="odd">
+<td>ダウンロード</td>
+<td>あなたがブラウザなどを用いてダウンロードしたファイルが保存される場所。ホームフォルダの一部</td>
+</tr>
+<tr class="even">
+<td>コンピュータ</td>
+<td>使っているコンピュータにはいっているすべてのファイルを収納しているフォルダ。「ホーム」フォルダ、「アプリケーション」フォルダも「コンピュータ」フォルダの一部</td>
+</tr>
+<tr class="odd">
+<td>アプリケーション</td>
+<td>一般的に利用されるアプリケーションが保存されるフォルダ</td>
+</tr>
+<tr class="even">
+<td>ユーティリティ</td>
+<td>やや特殊な用途に用いられるアプリケーションが保存されるフォルダ。「アプリケーションフォルダの一部」</td>
+</tr>
+<tr class="odd">
+<td>Shared</td>
+<td>教育システムの教材などを保管しているフォルダ。Finderの「移動メニュー」には登録されていません。デスクトップから開いて下さい。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="フォルダの親子関係">フォルダの親子関係</h1>
+<figure>
+<img src="images/1/Russian-Matroshka.jpg" alt="マトリョーシカ人形は人形のなかに小さな人形。その小さな人形のなかにさらに小さな人形という風になっています" /><figcaption>マトリョーシカ人形は人形のなかに小さな人形。その小さな人形のなかにさらに小さな人形という風になっています</figcaption>
+</figure>
+<p>小脇にかかえられるノートパソコンにもびっくりするほど大量のファイルが含まれています。わたしが授業に使っているノートパソコンのホームフォルダには450万個のファイルが含まれています。研究のために使っているデスクトップパソコンのホームフォルダには750万個のファイルが含まれています。パソコンには自分のファイルだけでなく、オペレーティングシステムや各種アプリケーションに付随するファイルが含まれているために膨大なファイルが含まれています。</p>
+<p>ためしに何億個ものファイルが雑然と並んでいる様子を思い描いてみて下さい。途方にくれますよね？大量のファイルをきれいに整理するための道具がフォルダです。一連のファイルをひとまとめに袋にいれて保存したような感じです。フォルダのなかに別なフォルダをいれることもできます。きれいに整理すれば膨大な情報もわかりやすく整備することができます。ファイルを整理するためのコツは以下のとおりです。</p>
+<ul>
+<li><p>ファイルやフォルダにわかりやすい名前をつける</p></li>
+<li><p>関連するファイルはひとまとまりのフォルダに保存する</p></li>
+<li><p>無関係のファイルを同じフォルダにいれない</p></li>
+<li><p>フォルダに含まれるファイル数が増えたら、そのフォルダに新しいフォルダを作ってファイルを小分けにする</p></li>
+</ul>
+<hr />
+<figure>
+<img src="images/1/finder-home.png" alt="ホームフォルダ" /><figcaption>ホームフォルダ</figcaption>
+</figure>
+<p>ホームフォルダを開くと、そのなかにたくさんのフォルダが含まれていることがわかります。上の図は私のノートパソコンのホームフォルダをリストビューで開いた様子です。ホームフォルダのなかには、Macに標準的なフォルダとして、デスクトップ、ダウンロード、パブリック、ピクチャ、ミュージック、ムービー、書類などが見えます。</p>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>フォルダ</th>
+<th>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>デスクトップ</td>
+<td>デスクトップ（ディスプレイの背景）に配置されているように見えるファイルたちは実はここに保存されています</td>
+</tr>
+<tr class="even">
+<td>ダウンロード</td>
+<td>ブラウザなどからダウンロードされたファイルが保存される場所です。Finderの<strong>移動</strong>メニューの<strong>ダウンロード</strong>項目が表示していたのは実はこのフォルダです。</td>
+</tr>
+<tr class="odd">
+<td>パブリック</td>
+<td>演習室のパソコンの環境は大勢で共有しています。でも、ほかの人たちはあなたのファイルを眺めることはできません、原則的には。でも、パブリックフォルダにファイルをコピーすれば、そのなかのファイルはほかの人々にも見えるようになります。</td>
+</tr>
+<tr class="even">
+<td>ピクチャ、ミュージック、ムービー</td>
+<td>各種のマルチメディア用のアプリケーションが使うフォルダです</td>
+</tr>
+<tr class="odd">
+<td>書類</td>
+<td>実験データの保存、実験データの加工、レポートや論文の執筆、プレゼンテーション資料の作成などさまざまな用途に使います。用途ごとにフォルダを用意して混乱しないようにしましょう。</td>
+</tr>
+</tbody>
+</table>
+<p>ホームフォルダのなかには元々は標準的なフォルダしかありませんけれども，自分で必要だと思ったら自由にディレクトリを作って構いません．たとえば，上のフォルダの例でいえば data, projects, Software, target などが私が追加したフォルダです．ほかにも追加したフォルダがいくつかあります．</p>
+<figure>
+<img src="images/1/finder-research.png" alt="Home/Dropbox" /><figcaption>Home/Dropbox</figcaption>
+</figure>
+<p>ホームフォルダのなかにあるフォルダに分類するだけでは，大量のファイルを整理しきれません．上の図は、わたしのノートパソコンにはいっているホームフォルダの内側にある仕事用のフォルダのそのまたかなにある研究用のフォルダをアイコンビューで表示した様子です。ひとくちに研究用とはいっても，目的に応じてファイルをさらに細分化して整理していることがわかると思います．</p>
+<ul>
+<li><p>研究プロジェクト: gcrest-admin, gcrest-wakita, H26-macros, projects</p></li>
+<li><p>入手した論文: jpapers（和文論文）、papers（英文論文）、proceedings（研究集会の会議録）、library.bib（英文論文のデータベース）</p></li>
+<li><p>研究発表: mypaper（執筆中の論文）、talk（研究発表資料）</p></li>
+<li><p>研究用メモ: notes</p></li>
+<li><p>研究室のセミナー: readings（輪講）, smartnova16（セミナー資料のための共有フォルダ）</p></li>
+</ul>
+<p>みなさんの場合でしたら，たとえば授業と私的な活動のためのフォルダを作成し，授業のためのフォルダのなかには授業ごとに個別のフォルダを作成するとよいでしょう．私的な活動については人それぞれですけれども，アルバイトとサークル活動のためにコンピュータを利用するのであれば，分類しておくとよいかもしれません．</p>
+<h2 id="親のフォルダ">親のフォルダ</h2>
+<p>前述のようにフォルダのなかに，別なフォルダを作ることができます．このようなフォルダの内側にあるフォルダのことを子フォルダと呼ぶことがあります．逆に子フォルダから見て，そのフォルダを含んでいるフォルダのことを親フォルダといいます．</p>
+<figure>
+<img src="images/1/finder-ancestors.png" alt="先祖のフォルダたち" /><figcaption>先祖のフォルダたち</figcaption>
+</figure>
+<p>Finderでフォルダを開いている状態でウィンドウのタイトルに注目して下さい。フォルダ一覧を表示しているウィンドウの最上部中央に見える文字がタイトルです。もし、あなたがホームフォルダを開いていたら、そこにあなたの学籍番号が表示されているはずです。</p>
+<p>さて、マウスポインタをタイトルの上にあわせ、右クリックしてみましょう。上の図は、わたしのノートパソコンで<strong>research</strong>フォルダを開いた状態で、ウィンドウのタイトルを右クリックした様子です。フォルダのリストらしいものが表示されました。上から順番に、<strong>research</strong>、<strong>Dropbox (smartnova)</strong>、<strong>wakita</strong>、<strong>ユーザ</strong>、<strong>Macintosh HD</strong>、<strong>prancer</strong>と。このリストは、<strong>research</strong>フォルダを直接包含していているフォルダ，すなわち<strong>research</strong>フォルダの親フォルダが <strong>Dropbox (smartnova)</strong> フォルダで、<strong>Dropbox (smartnova)</strong> の親フォルダが <strong>wakita</strong>フォルダだということを意味しています。リストの一番下の<strong>prancer</strong>は私のノートパソコンに与えた名前で、ノートパソコン全体を意味しています。この情報は以下のように読むことができます。</p>
+<ul>
+<li><p>わたしが使っているノートパソコンの名前は<strong>prancer</strong>です。</p></li>
+<li><p><strong>prancer</strong>という名前のコンピュータは<strong>Macintosh HD</strong>というハードディスクを内蔵しています。ハードディスク全体もひとつのフォルダとして表されます。</p></li>
+<li><p><strong>Macintosh HD</strong>フォルダは<strong>ユーザ</strong>フォルダが含んでいます。</p></li>
+<li><p><strong>ユーザ</strong>フォルダは<strong>wakita</strong>フォルダ（わたしのホームフォルダ）を含んでいます。</p></li>
+<li><p><strong>wakita</strong>フォルダは <strong>Dropbox (smartnova)</strong> フォルダを含んでいます。</p></li>
+<li><p><strong>Dropbox (smartnova)</strong>フォルダは<strong>research</strong>フォルダを含んでいます。</p></li>
+<li><p>このウィンドウに表示されているのは<strong>research</strong>フォルダの内容です。</p></li>
+</ul>
+<p>あるファイルやフォルダがほかのフォルダに含まれているとき、後者を前者の<strong>親フォルダ</strong>あるいは単に<strong>親</strong>と呼びます。さきほどの例では、以下のように言います。</p>
+<ul>
+<li><p><strong>research</strong>フォルダの親フォルダは <strong>Dropbox (smartnova)</strong> フォルダです。</p></li>
+<li><p><strong>wakita</strong>の親は<strong>ユーザ</strong>です。</p></li>
+</ul>
+<p>Finderで開いているフォルダがシステム全体のどこに位置しているのかがわからなくなったら，ここでやったようにFinderのウィンドウのタイトル部分を右クリックして確認して下さい．</p>
+<h1 id="ファイルの操作">ファイルの操作</h1>
+<p>ファイルの名前の変更、複製、コピー、ペーストは簡単です。いくつかの方法があります。</p>
+<table>
+<thead>
+<tr class="header">
+<th>ファイルの操作</th>
+<th>右クリック</th>
+<th>メニュー</th>
+<th>ショートカット</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>名前の変更</td>
+<td>名前を変更</td>
+<td>ファイルメニュー</td>
+<td>return</td>
+</tr>
+<tr class="even">
+<td>複製</td>
+<td>〜を複製</td>
+<td>編集メニュー</td>
+<td>Command-D</td>
+</tr>
+<tr class="odd">
+<td>コピー</td>
+<td>〜をコピー</td>
+<td>編集メニュー</td>
+<td>Command-C</td>
+</tr>
+<tr class="even">
+<td>ペースト</td>
+<td>項目をペースト</td>
+<td>編集メニュー</td>
+<td>Command-V</td>
+</tr>
+<tr class="odd">
+<td>削除</td>
+<td>ゴミ箱に入れる</td>
+<td>ファイルメニュー</td>
+<td>Command-delete</td>
+</tr>
+</tbody>
+</table>
+<p>ファイルを別のフォルダに移動するときはドラッグ＆ドロップ。</p>
+<h1 id="フォルダの操作">フォルダの操作</h1>
+<p>フォルダの操作も簡単です。</p>
+<table>
+<thead>
+<tr class="header">
+<th>フォルダの操作</th>
+<th>右クリック</th>
+<th>メニュー</th>
+<th>ショートカット</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>新規作成</td>
+<td>新規フォルダ</td>
+<td>ファイルメニュー</td>
+<td>Shift-Command-N</td>
+</tr>
+<tr class="even">
+<td>名前の変更</td>
+<td>名前を変更</td>
+<td>ファイルメニュー</td>
+<td>return</td>
+</tr>
+<tr class="odd">
+<td>削除</td>
+<td>ゴミ箱に入れる</td>
+<td>ファイルメニュー</td>
+<td>Command-delete</td>
+</tr>
+</tbody>
+</table>
+<p>フォルダを別のフォルダに移動するときはドラッグ＆ドロップ。</p>
+<section class="footer">
+<a href="/y22-il1j/">情報リテラシ第一</a> / <a href="/y22-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

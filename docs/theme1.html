@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>テーマ１　データの処理と加工</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y23-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y23-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y23-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y23-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">テーマ１　データの処理と加工</h1>
+</header>
+<section class="header">
+<a href="/y23-il1j">情報リテラシ第一</a> / <a href="/y23-il2j">情報リテラシ第二</a>
+</section>
+<p>2015年春に日本を震撼させた世紀のデータ改竄と論文偽装にかかわる事件は，情報リテラシの面からも多くの問題を投げかけました．</p>
+<blockquote>
+<p>何度も何度もパワーポイント内でデータをまとめ、バージョンアップしてデータを集めていたので、そこに載っているデータを安心しきって、論文に使ってしまいました。もう、その時に元データをたどっていれば、このようなことにはならなかったので、本当に毎日反省しております。</p>
+</blockquote>
+<p>「小保方氏一問一答（１）データ、安心しきって論文に使った」，毎日新聞ウェブ版2014年4月9日の記事より，</p>
+<p>といった発言からは，不適切なデータの管理，非効率なデータ処理が問題の背景にあったことがうかがえます．</p>
+<p>本テーマでは、このような過去の重大事件を鑑み、以下のようなことについて学びます。</p>
+<ul>
+<li><p>データを散逸させない実験データの整理方法、ファイルの命名方法</p></li>
+<li><p>データの処理と加工の記録をスクリプトとして残す方法</p></li>
+</ul>
+<p>これらの技術は、再現可能な科学技術の実践方法の基礎にあたります。</p>
+<h1 id="テーマの実習について">テーマの実習について</h1>
+<p>SNSの友人関係を用いた実験の結果から得られた大規模なデータを整理する方法，さまざまなグラフを作成する工程を実践的に学びます．また，過去に行った実験のデータや，分析・加工の過程を残すことは大切です。実験の再現性を担保する方法についても学びます．</p>
+<p>この実習で作成されたグラフの画像は次のテーマの「<a href="theme2.html">テーマ２　科学技術文書執筆</a>」で作成する論文に取り込みます。</p>
+<h2 id="実習のための参考サイト">実習のための参考サイト</h2>
+<ul>
+<li><p><a href="http://lowrank.net/gnuplot/">Gnuplot tips – not so Frequently Asked Questions –</a></p>
+<p>世界的に頼りにされているサイトです。サイトの文字コードの設定がおかしいようで文字化けすることがあります。開いたときに文字化けしたときは、ウェブブラウザのテキストエンコーディングを<code>UTF-8</code>に設定すれば見られます。Safariならば「表示メニュー、テキストエンコーディング、Unicode (UTF-8)」を選択して下さい。</p></li>
+<li><p><a href="images/1/gnuplot-parameters.png">Gnuplot の描画パラメター一覧</a></p></li>
+<li><p><a href="1x-install.html">gnuplotを自宅のパソコンで利用するために</a></p></li>
+<li><p><a href="1x-run.html">gnuplotの実行</a></p></li>
+</ul>
+<h2 id="お薦めの書籍">お薦めの書籍</h2>
+<ul>
+<li><p>岡崎康司，隅藏康一，<a href="http://www.amazon.co.jp/dp/4758120285">理系なら知っておきたいラボノートの書き方 改訂版</a>，羊土社，2011年．</p>
+<p>伝統的な実験系の研究分野で，実験の再現性を担保し，ラボの知的財産を守るための手段としてラボノートが用いられています．この管理を徹底するために，一般的な感覚からは想像も及ばない厳しい管理体制が敷かれていることがわかります．ノーベル賞受賞者の山中伸弥博士のラボでも使われている教科書だそうです．</p></li>
+</ul>
+<h1 id="ファイルの扱い">ファイルの扱い</h1>
+<ul>
+<li><p><a href="11-finder.html">ファイルとフォルダ</a></p></li>
+<li><p><a href="12-files.html">さまざまなファイル</a></p></li>
+<li><p><a href="13-files.html">ターミナルからの操作</a></p></li>
+</ul>
+<h1 id="実習の内容">実習の内容</h1>
+<ul>
+<li><p><a href="14-dataset.html">実習に用いるデータセット</a></p></li>
+<li><p><a href="1a-exercise.html">実習Ａ　図５と図６の折れ線グラフ</a></p></li>
+<li><p><a href="1b-exercise.html">実習Ｂ　図３と図７の散布図</a></p></li>
+<li><p><a href="1c-exercise.html">実習Ｃ　図２の棒グラフを完成しなさい</a></p></li>
+</ul>
+<section class="footer">
+<a href="/y23-il1j/">情報リテラシ第一</a> / <a href="/y23-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

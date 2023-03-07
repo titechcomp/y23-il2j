@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>WindowsユーザのためのpLaTeX環境 (TeX Live 2017)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y22-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y22-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y22-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y22-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">WindowsユーザのためのpLaTeX環境 (TeX Live 2017)</h1>
+</header>
+<section class="header">
+<a href="/y22-il1j">情報リテラシ第一</a> / <a href="/y22-il2j">情報リテラシ第二</a>
+</section>
+<p>(このページは2017年時点での情報が書かれていますが、TeX Liveは毎年バージョンが新しいものが公開されるため、TeX Live 2017 の2017を現在の年に置き換えて読むとよいでしょう。)</p>
+<h1 id="はじめに">はじめに</h1>
+<p>pLaTeXという文書作成システムはTeX Liveと呼ばれる巨大なソフトウェアパッケージの一部として提供されています。TeX LiveはLinux, OSX, Windowsで動作します。それぞれのシステムごとにインストール方法は異なります。ここではWindows 10の上で私が実施したインストール手順を紹介します。それより古いWindowsでのインストールの参考になるかもしれませんが、動作保証はしません。</p>
+<h1 id="実習との関わりについて">実習との関わりについて</h1>
+<p>情報リテラシの実習課題は大学の実習室で実施することを設計されています。</p>
+<p>自力で大学と同等の環境を自宅のWindowsやMacに構築することは可能です。また、将来のみなさんの学習活動や研究活動に授業で学んだ知識を実践してくださることは教員一同が望むことでもあります。でも、講義スタッフの人的資源は限られていて、学生さんが抱える個別で特殊な事情に十分に寄り添うことは困難です。</p>
+<p>不幸にして、ご自分のパソコンの上にLaTeXの環境を構築できなかったとしてもそれを実習ができないことや宿題を期限内に提出できないことの言い訳にしないで下さい。演習室は健全なLaTeX環境を備えていて、みなさんがやってくることを待っています。</p>
+<p>ご自分のパソコンに上手にソフトウェアを構築できている場合には、そこで実施したファイルなどを実習の成果物として提出しても構わないか否かについては個別の担当教員にご相談下さい。確実性を担保するには、自宅で実施し完成させた内容を大学に送付し、大学のTeXShopでタイプセットし直して提出して下さい。</p>
+<h1 id="余裕をもってインストールを">余裕をもってインストールを</h1>
+<ul>
+<li><p>インストールには10GB程度のディスクの空き容量が必要そうです。インストールをはじめる前に十分なディスクの空き容量があることを確認して下さい。</p></li>
+<li><p>3.4GB程度のソフトウェアをダウンロードします。公衆ネットワーク回線を用いている場合には契約上の制限に気をつけて下さい。極端に性能の悪いネットワークでのインストールは困難です。</p></li>
+<li><p>インストール作業は良好なネットワークに接続されている環境でも２時間以上を要する場合があります。ネットワーク性能の悪かったり、パソコンの性能（特にハードディスクの性能と空領域の量）が劣る場合にはもっと時間がかかります。時間にゆとりのあるときに実施して下さい。常時監視する必要はありませんので、途中で食事をしたり、お風呂にはいられるとよいでしょう。</p></li>
+</ul>
+<h1 id="なにをインストールするの">なにをインストールするの？</h1>
+<p>TeX Live 2017をインストールします。このなかにpLaTeX組版システム、フォント、3,000以上の組版用のパッケージ、pLaTeXの作業を行うためのソフトウェアなどがすべて含まれています。TeX Live 2017をインストールし、初期設定をすこし変更すれば日本語の文書作成に使えるようになります。</p>
+<h1 id="インストール手順の概略">インストール手順の概略</h1>
+<p>基本的に国内のpLaTeXの情報センターの<a href="https://texwiki.texjp.org/">TeX Wiki</a>が提供している<a href="https://texwiki.texjp.org/?TeX%20Live%2FWindows">Windows向けの解説: TeX Live/Windows</a>の説明に沿ってインストールしました。</p>
+<p>インストール方法にはネットワークインストールと<a href="https://texwiki.texjp.org/?TeX%20Live%2FWindows#zc468876">ISOイメージからのインストール</a>などいくつかの方法があります。わたしはネットワークから一括してダウンロードするISOイメージからのインストールを実施しました。ネットワークインストールは試していません。</p>
+<ol type="1">
+<li><p><a href="https://texwiki.texjp.org/?TeX%20Live%2FWindows#zc468876">ウェブページの説明</a>にしたがって texlive2017.iso (約3.4GB) をダウンロードしました（良好なWiFi環境で約20分、ギガビットEtherネット直結ならもっと速いかもしれません。）。この間に、TeX Live/Windows のページの内容をひととおり読んでおいて下さい。</p>
+<p>自宅でのダウンロードがうまくいかないひとのために、演習室の環境にTeXLive for Windowsのインストーラをダウンロードしておきました。このインストールをお手持ちのUSBメモリなどにコピーして持ち帰り、自宅のWindowsにインストールできます。</p>
+<p>ダウンロードしたインストーラの場所は、デスクトップにある<strong>Shader</strong>フォルダのなかの<strong>IL</strong>のなかの<strong>Software</strong>のなかです。ファイル名は<code>texlive2017.iso</code>です。</p>
+<p>ご自宅のネットワーク回線の性能が極めて劣る場合にはご友人がダウンロードしたファイルをUSBストレージなどでもらうなり工夫なさって下さい。</p></li>
+<li><p>ダウンロードフォルダに保存されている texlive2017.iso をダブルクリックすると、フォルダが開きます。このフォルダには <code>archive/</code>, <code>readme-html.dir/</code>, <code>readme-txt.dir/</code>, <code>source/</code> などのフォルダを含めて18個のファイルが含まれています。このなかから <code>install-tl-windows.bat</code> というファイルを探して下さい。これがTeX Live2017のインストールです。これをダブルクリックしてインストーラの実行を開始します。いくつかの質問に適宜答えればインストールがはじまります。インストールに要する時間は、SSDがないためディスクアクセスの遅いパソコンで40分程度です。インストール中に経過時間と予測されたインストール全体に要する時間が継続的に表示されます。</p>
+<p>もしも <code>install-tl-windows.bat</code> を実行したときにエラーが出力されるようならば、別の方法でインストールできます。コマンドプロンプトを起動し、そこで以下のふたつのコマンドを実行して下さい。</p>
+<pre><code>e:
+install-tl-windows</code></pre></li>
+<li><p>（たぶんやった方がいい）あなたのパソコンのダウンロードフォルダには約3.4GBのインストーラのファイル(<code>*.iso</code>)がまだ残っていることと思います。TeX Live 2017のインストーラは、インストール作業が完了すれば不要です。ソフトウェアの動作に問題がないことを会得したら、削除してしまいましょう。</p></li>
+<li><p>（おまけの作業）配布されているTeX Live 2017のソフトウェアは2017年5月24日に公開されたのです。TeX Live 2017は3,000以上のソフトウェアパッケージを含んでおり、それらは毎日のようにバグへの対応や機能の更新が追加されています。TeX Liveのソフトウェアを最新に保つためには、<a href="https://texwiki.texjp.org/?TeX%20Live%2FWindows#a6223106">TeX Wiki のウェブページのアップデート方法の解説</a>にしたがって作業して下さい。</p>
+<p>わたしの自宅のパソコンでは、この説明のとおりにアップデートできました。でも、職場のパソコンではエラーになりました。一旦、Windows からログアウトし、再ログインしてからアップデート操作をやりなおしたらうまくできました。</p>
+<p>ソフトウェアのアップデートに要する時間: 30分程度</p></li>
+</ol>
+<h1 id="インストールの確認とソフトウェアの設定">インストールの確認とソフトウェアの設定</h1>
+<p>東工大の授業ではTeXShopと呼ばれるソフトウェアを用いて実習をしています。WindowsにはTeXShopとよく似たTeXworks editor（以下、TeXworksと略）が提供されています。TeXworksはTeXShopを参考にして開発されたソフトウェアなので両者の機能はよく似ています。</p>
+<p>東工大の論文執筆実習の最初にTeXShopの設定変更を施すことで日本語文書を執筆できるようにしました。TeX Live 2017をインストールした直後のTeXworksも同様にはじめは英語文書の執筆向けの設定が施されているため、そのままでは日本語の執筆ができません。</p>
+<p>まずは、TeXworksを起動してみましょう。TeXworksはたぶんWindows 10のスタートメニューに含まれていると思います。スタートメニューに見つけることができない場合は、<strong>すべてのアプリ</strong>のリストのなかの<strong>TeX Live 2017</strong>のなかに見つけることができると思います。</p>
+<p>TeXworksの画面が表示されましたか？タイトルには <code>untitled-1.tex - TeXworks</code> と表示されると思います。表示されたら、設定を変更して日本語が扱えるようにしましょう。</p>
+<p>設定を変更するには<strong>編集</strong>メニューから<strong>設定</strong>を選択します。「TeXworksの設定」をタイトルとするウィンドウが表示されるはずです。ウィンドウのタイトルバーのすぐ下の５つのタブのうち<strong>タイプセット</strong>を開いて下さい。この画面で、<strong>タイプセットの方法</strong>枠の下部にある<strong>デフォルト</strong>が変更したい項目です。ここが<code>pLaTeX (ptex2pdf)</code>となるようにリストを選択したら、ウィンドウ右下の<strong>OK</strong>をクリックすれば設定は完了です。</p>
+<section class="footer">
+<a href="/y22-il1j/">情報リテラシ第一</a> / <a href="/y22-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>gnuplot の実行</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y22-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y22-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y22-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y22-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">gnuplot の実行</h1>
+</header>
+<section class="header">
+<a href="/y22-il1j">情報リテラシ第一</a> / <a href="/y22-il2j">情報リテラシ第二</a>
+</section>
+<h1 id="gnuplotの実行グラフを画像として出力するまで">gnuplotの実行〜グラフを画像として出力するまで〜</h1>
+<p>gnuplotでは，「スクリプト」と呼ばれる，ファイル中に記述されたコマンド（命令）を実行することで，グラフを描画します．以下は，<code>sin関数</code>と<code>cos関数</code>を描画したグラフを画像ファイルとして出力するためのスクリプトです．</p>
+<pre><code>plot sin(x)
+replot cos(x)
+set terminal png 
+set output &quot;image.png&quot;
+replot </code></pre>
+<p>一行につき，一つの命令が記述され，上から順に命令が実行されます．スクリプトの各命令が何をしているのかについて説明します．</p>
+<ol type="1">
+<li><p><code>plot</code>は，関数を描画し，出力するコマンドです．「plot 関数」のように使います．</p></li>
+<li><p><code>replot</code>は，グラフを追加描画するコマンドです．<code>plot cos(x)</code>とすると，<code>cos</code>関数しか描画されないのに対して，<code>replot cos(x)</code>は，以前の描画が保持された状態となり，<code>cos</code>関数と<code>sin</code>関数が両方描画されます．</p></li>
+<li><p>1行目と2行目が実行されると，図1のようなグラフが画面上に出力されます．これを<strong>標準出力</strong>と言います．デフォルトでは，出力形式は標準出力です．つまり，画像ファイルとして出力するためには，出力形式を<strong>画像出力</strong>に切り替える必要があります．そこで，<code>set terminal X</code>というコマンドで，<em>X</em>という出力モードに切り替えます．ここでは，png形式の画像ファイルを出力する形式に切り替えます．その他の画像形式はLaTeXでよく使われるpdf形式があります．<code>set terminal pdfcairo</code>で切り替えることができます．また，標準出力に切り替えたい場合は，<code>set terminal wxt</code>とします．</p></li>
+<li><p><code>set output &quot;ファイル名&quot;</code>で出力する画像の名前を指定します．</p></li>
+<li><p>画像を出力します．関数が指定されていない<code>replot</code>は，一つ前の<code>plot</code>コマンドもしくは<code>replot</code>コマンドを実行するコマンドです．すなわち，<code>replot cos(x)</code>が実行されます．<code>replot</code>コマンドを実行後，画像が出力されます．</p></li>
+</ol>
+<p>次に，スクリプトを書いてみましょう．ここでは，「メモ帳」でスクリプトを書くことにします．<br>
+  メモ帳の開き方は，Windows 7であれば，左下の「スタート（Windowsマーク）」をクリックした後，「プログラムとファイルの検索」という窓に「notepad」と入力し，Enterキーを押すと，メモ帳が起動します．<br>
+  Windows10であれば，左下の「スタート」を選択後「すべてのアプリ」の「W」の「Windowsアクセサリ」内にメモ帳があります．</p>
+<p>上記のスクリプトを書いたら，このファイルを保存します．メモ帳画面左上の「ファイル」タブを選択し，その中の「上書き保存」を選択します．保存する場所は「gnuplot」フォルダ内の「bin」フォルダ内に保存します．間違って別の場所に保存しまうとスクリプトが実行できないので，気をつけてください．ファイル名は「test.plot」としましょう．最後に「保存」を選択します．</p>
+<p>スクリプトを実行してみましょう．スクリプトの実行には「コマンドプロンプト」を使用します．<br>
+  コマンドプロンプトを起動するには，Windows7だと左下の「Windowsマーク」をクリックした後，「プログラムとファイルの検索」という窓に「cmd」と入力し，Enterキーを押します．<br>
+  Windows10だと，左下の「スタート」を選択後「すべてのアプリ」の「W」の「Windowsシステムツール」内の「コマンドプロンプト」を選択します．<br>
+  スクリプトを実行するには，gnuplotの実行ファイルとスクリプトファイルがある「binフォルダ」に移動しなければなりません．
+  Macのターミナル同様，コマンドプロントにおいても「cd」コマンドで作業フォルダの移動ができます．<br>
+  以下は，binフォルダに移動するためのコマンドです．</p>
+<pre><code>cd
+cd desktop/gnuplot/bin</code></pre>
+<p>念のため，最初に <code>cd</code> を実行することでホームディレクトリに移動しています．既に，ホームディレクトリ（C:/Users/ユーザ名）にいるなら不要です．次に，コマンドプロンプトに以下のコマンドを入力してEnterキーを押してください．</p>
+<pre><code>gnuplot -persist test.plot</code></pre>
+<p>スクリプトの実行は，「gnuplot 実行したいスクリプトのファイル名」で行います．実行後，図１のグラフが出力されるはずです．<br>
+  -(ハイフン)persistは，標準出力の画面を保持するためのオプションです．このオプションを指定しないと，出力画面が一瞬で消えてしまいます．画像image.pngはgnuplotフォルダ内のbinフォルダ内にあります．</p>
+<p>画像の確認方法は三つあります．まずは，ビューアーを使う方法です．確認したい画像ファイルにマウスポインタを合わせて右クリックすると「プログラムから開く」という項目があるので，そこにマウスポインタを合わせて「Windowsフォトビューアー」を選択します．<br>
+  二つ目は，ブラウザ上で確認する方法です．「プログラムから開く」という項目から，お好きなブラウザを選択します．ブラウザによる方法は，スクリプトが実行された後，ブラウザ画面からF5を入力することで最新の画像が読み込まれます．<br>
+  三つ目は，標準出力を確認することで，あたかも画像を確認したように扱う方法です．好みに合わせて選択してください．</p>
+<figure>
+<img src="images/1/image.png" alt="test.plot" />
+</figure>
+<p style="text-align:center">図１</p>
+<section class="footer">
+<a href="/y22-il1j/">情報リテラシ第一</a> / <a href="/y22-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

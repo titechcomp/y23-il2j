@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>テーマ２　科学技術文書執筆</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y22-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y22-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y22-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y22-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">テーマ２　科学技術文書執筆</h1>
+</header>
+<section class="header">
+<a href="/y22-il1j">情報リテラシ第一</a> / <a href="/y22-il2j">情報リテラシ第二</a>
+</section>
+<h1 id="実習教材">実習教材</h1>
+<p>実習に用いるファイルは<a href="arc/theme2-writing.zip">こちらからダウンロード</a>して下さい。</p>
+<h1 id="サンプル">サンプル</h1>
+<p><a href="2/sample.tex">サンプルのtexファイル</a></p>
+<h1 id="texshopの設定">TeXShopの設定</h1>
+<p>実習資料にはTeXShopを用います。クラスによってはほかのツールを利用するかもしれません。TeXShopは海外で開発されたソフトウェアです。日本語の文書執筆もサポートされていますが、そのためには初期設定を変更しなくてはいけません。以下の方法で設定を変更して下さい。</p>
+<ol type="1">
+<li><p>TeXShop を起動する。<code>/Applications/TeX/TeXShop</code>にあります</p></li>
+<li><p><code>TeXShop</code> メニューから、<strong>環境設定…</strong>項目を開きます。</p></li>
+<li><p><strong>内部設定</strong>タブを開きます。</p></li>
+<li><p><strong>設定プロファイル</strong>から <code>pTeX (latexmk)</code>を選択します。</p></li>
+<li><p><strong>OK</strong>をクリックして<strong>TeXShop 環境設定</strong>のウィンドウの設定を閉じます。</p></li>
+<li><p>TeXShop を終了します。</p>
+<p>この設定が有効にするためにはTeXShopを再起動しなくてはいけません。</p>
+<p>また，ウィンドウを閉じただけでは TeXShop は動き続け，終了したことになりません．<strong>正しい終了操作ためには，TeXShop メニューから「TeXShop を終了」を選択</strong>して下さい．</p>
+<p>これで準備完了です。以上の設定は、一度だけ実施するだけで大丈夫です。</p></li>
+<li><p>以上の初期設定後、最初に TeXShop を起動するときは、TeXShop を終了後 10秒ほど数えてから起動して下さい。</p></li>
+</ol>
+<!--
+1. パス設定のうち、`(pdf)TeX (デフォルト: /Library/TeX/texbin OR /usr/texbin)`という設定項目の内容を以下に変更します。
+
+    `/usr/texbin`
+-->
+<h1 id="自宅のmacやwindowsでplatexを利用するためには">自宅のMacやWindowsでpLaTeXを利用するためには？</h1>
+<ul>
+<li><p><a href="2-mactex.html">OSX (Mac)でpLaTeXを利用するための設定方法</a></p></li>
+<li><p><a href="2-wintex.html">Windows 10でpLaTeXを利用するための設定方法</a></p></li>
+</ul>
+<p>自宅のパソコンの不具合が原因で自宅で実習できない場合には、授業外の時間に演習室のMacで実習を実施して下さい。</p>
+<h1 id="参考資料">参考資料</h1>
+<ul>
+<li><p>教材に必要な知識は原則的に本サイトの<a href="latex/">サポートページ群</a>と参考書に記載されています。</p></li>
+<li><p>無闇にGoogle検索でヒットしたページの内容を信頼しないで下さい。インターネットの情報のなかには今では推奨されない古い流儀を解説しているページもかなり目立ちます。Google検索をする場合にはヒットしたページの著者のLaTeXについての知識を十分に評価してから記事の内容を読むようにして下さい。この点については、ページの著者のサイトにLaTeXに関する豊富な記事が書かれているか、記事の内容は全般的に新しいのかということで判断できます。</p>
+<p>繰り返しになりますが、実習教材の記述は LaTeX の最新技術に追随した内容となっています。</p></li>
+<li><p><a href="https://en.wikibooks.org/wiki/LaTeX">LaTeX Wikibook</a></p>
+<p>LaTeXについて総合的に解説しているWikibookです。内容の充実度合いについて受賞されたようです。PDF版もダウンロードできます。</p>
+<ul>
+<li>需要が多いと思うので<a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">数学関連の書式</a>を紹介します．内容は多いので、目次(Contents)のページです。このページだけでもかなりの分量ですので、目指す節を目次のなかから探すといいでしょう。ちなみに数学記号は18節です。</li>
+</ul></li>
+<li><p><a href="https://ja.wikibooks.org/wiki/TeX/LaTeX入門">TeX/LaTeX入門</a></p>
+<p>LaTeXのWikibookの日本語版です。上掲の英語版の姉妹編のはずなんですが、まだ、びっくりするほど貧弱です。でも、細かいことが書かれてないから、最低限の知識がまとまっていると解釈することもできます。日本語版も育てていかないといけませんね。</p>
+<p>（脇田建の私見です：日本では英語ができるか否かで知識の二極化が進んでいます。英語ができる人は日本語のページを読まず、リッチな英語の情報に触れ、そうでない人々は信頼性の低い日本語の情報に振り回されています。この結果、言語で分離されたふたつの層の知識の二極化がどんどん進んでいます。早く英語を身につけましょうというのは一理ありますが、日本語の情報の充実も必要だと思います。英語ができるエリートが日本語で情報を流していない（その余裕がない）ことに問題があるような気がします。）</p></li>
+<li><p><a href="http://tex.stackexchange.com">TeX StackExchange</a></p>
+<p>ソフトウェアやプログラミングについての知識を交換する場として<a href="http://stackoverflow.com">StackOverflow</a>が有名です。TeX StackExchangeはそのなかのコミュニティでTeXやLaTeXに関するQ/Aサイトです。StackOverflowは（そして、その部分サイトのTeX StackExchagneも）、質問に関与するユーザの行動を適切な経済モデルで評価することによって、信頼性の低い言説の流布を避ける仕組みが機能しています。このため、一般のQ/Aサイトとは一段高い品質を誇っています。</p>
+<p>StackOverflowの日本語版のサービスも始まっていますが、すくなくとも<a href="http://ja.stackoverflow.com/questions/tagged/latex">LaTeX関連のコミュニティ</a>はまだ育っていないようです。もしかすると、Wikibookと同様の現象かもしれません。学術目的で利用されるLaTeXの利用者は特に英文リテラシが高いため、英語のコミュニティで活動する人が多いのかもしれません。あるいは、StackExchangeが始まったときには、すでに歴史の長いTeX Wikiがあったということかもしれません。</p></li>
+<li><p><a href="https://texwiki.texjp.org">TeX Wiki</a></p>
+<p>三重大学の奥村先生を中心に運営されているTeXに関するWikiサイトです。TeXについての質問を交わす<a href="http://oku.edu.mie-u.ac.jp/tex/">TeXフォーラム</a>も盛んです。なにか探し物があるときは<a href="http://oku.edu.mie-u.ac.jp/tex/mod/forum/view.php?f=2&amp;showall=1">過去の質問一覧</a>で探すとよいかもしれません。このフォーラムは国内のTeXコミュニティが目を配っているので回答内容の品質が高いです。</p></li>
+</ul>
+<section class="footer">
+<a href="/y22-il1j/">情報リテラシ第一</a> / <a href="/y22-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

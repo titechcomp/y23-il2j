@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>LaTeX: 見出し (\section, \subsection, \chapter, \part)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y21-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y21-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y21-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y21-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">LaTeX: 見出し (<code>\section</code>, <code>\subsection</code>, <code>\chapter</code>, <code>\part</code>)</h1>
+</header>
+<section class="header">
+<a href="/y21-il1j">情報リテラシ第一</a> / <a href="/y21-il2j">情報リテラシ第二</a>
+</section>
+<p>科学技術文書において、文書のもっとも大きな構成要素は節(section)です。大きな節を細分する場合には、それをいくつかのsubsectionに分けます。これらを出力するためのTEXコマンドをより大きな構成単位から並べると以下のとおりになります。</p>
+<pre><code>\part
+\chapter
+\section
+\subsection
+\subsubsection
+\paragraph
+\subparagraph</code></pre>
+<p>これらのコマンドは、以下のように用います。</p>
+<pre><code>\section {はじめに}
+はじめにいっておきたいことを書いておきます。
+\section {本文}
+本文のはじまりを書きます。
+\subsection {本文1}
+ここには2.1の内容を書きます。
+\subsection {本文2}
+ここには2.2の内容を書きます。
+\section {おわりに}
+まとめます。</code></pre>
+<p>この出力結果は以下のような感じになります。</p>
+<blockquote>
+<p><big>1　はじめに</big><br />
+　はじめにいっておきたいことを書いておきます。</p>
+<p><big>2　本文</big><br />
+　本文のはじまりを書きます。</p>
+<p><big>2.1　本文1</big><br />
+　ここには2.1の内容を書きます。</p>
+<p><big>2.2　本文2</big><br />
+　ここには2.2の内容を書きます。</p>
+<p><big>3　おわりに</big><br />
+　まとめます。</p>
+</blockquote>
+<p>これらの見出しコマンドは<code>documentclass</code>で設定される文書の体裁によって、使えるものが限られます。たとえば、<code>jarticle</code>の体裁では<code>\part</code>と<code>\chapter</code>は使えません。これらのコマンドは本のようにページ数の多い文献で利用すべきものだからです。</p>
+<h2 id="文書書法">文書書法</h2>
+<p><code>pLaTeX</code>は、多くの見出し用のコマンドを用意しています。しかし、よく使われる見出し用のコマンドはそれほど多くはありません。多くの 場合、<code>jarticle</code>の体裁で利用される見出しはせいぜい<code>\section</code>, <code>\subsection</code>程度と心得ていて下さい。たかだか数ページの文書に<code>\subsubsection</code>を用いるのは見苦しいものです。</p>
+<h2 id="関連情報">関連情報</h2>
+<ul>
+<li><dl>
+<dt>見出し番号を出力しないためには？</dt>
+<dd>見出し番号のコマンドにアスタリスクをつけると出力されません。詳しくは<a href="03-sectioningstar.html">この解説ページ</a>を。
+</dd>
+</dl></li>
+</ul>
+<section class="footer">
+<a href="/y21-il1j/">情報リテラシ第一</a> / <a href="/y21-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

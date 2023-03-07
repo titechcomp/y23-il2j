@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>実習Ｃ　図２の棒グラフを完成しなさい</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y23-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y23-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y23-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y23-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">実習Ｃ　図２の棒グラフを完成しなさい</h1>
+</header>
+<section class="header">
+<a href="/y23-il1j">情報リテラシ第一</a> / <a href="/y23-il2j">情報リテラシ第二</a>
+</section>
+<p><code>plot/fig2-cnm-joins-time-series.plot</code> は gnuplot のプログラムです。ターミナルを開き、<code>plot</code>ディレクトリに移動してから<code>gnuplot fig2-cnm-joins-time-series.plot</code>コマンドを実行すると<code>images</code>ディレクトリに<code>fig2-cnm-joins-time-series.pdf</code>という名前の画像ファイルが生成されます。</p>
+<p>残念ながらこのプログラムは未完成です。教員の示すヒントをよく聞きながらプログラムを適切に修正し、以下のような画像を生成して下さい。</p>
+<figure>
+<img src="images/1x/fig2.png" title="図２：ネットワークの解析に要した時間の時系列遷移" alt="データ処理実習" /><figcaption>データ処理実習</figcaption>
+</figure>
+<h1 id="論文執筆当時のこぼれ話">論文執筆当時のこぼれ話</h1>
+<p>このグラフを最初に作ったとき、棒は塗り潰していました。以下のような図だったと思います。</p>
+<figure>
+<img src="images/1x/fig2-color.png" alt="色を塗りつぶした作例" /><figcaption>色を塗りつぶした作例</figcaption>
+</figure>
+<p>ただ論文がモノクロで印刷されると色の判別が難しいことがあります。そのため、特に必要がない限り図はモノクロで用意した方がよいでしょう。でも、国際学会でも以前は論文を収録する会議録を印刷したものがあったのが、最近はオンラインでPDFで配布されることも増えてきたため、プリンタのことはあまり気にならなくなりました。しかしながら、色弱に対する考慮も求められるので、論文だけでなく配色には一定の注意を要します。たとえば、以下は上のカラー画像について第一種色盲者の見え方をシミュレーションした結果です。（色覚シミュレーションにはiOSアプリの「色のシミュレータ」を用いました）</p>
+<figure>
+<img src="images/1x/fig2-protanope.png" alt="不用意に彩色した画像の配色は色弱の人には判別困難な場合があります" /><figcaption>不用意に彩色した画像の配色は色弱の人には判別困難な場合があります</figcaption>
+</figure>
+<p>この図の場合、５種類の棒が区別できればよいだけなので、強いて色を用いるほどのことはないような気がします。そこで、灰色のグラデーションで塗り分けてみました。それが以下の作例です。</p>
+<figure>
+<img src="images/1x/fig2-gray.png" alt="灰色のグラデーションで塗りつぶした作例" /><figcaption>灰色のグラデーションで塗りつぶした作例</figcaption>
+</figure>
+<p>これとは別に、この実習で扱われているような模様の貼り付けの作例と比較し、もっとも視認性がよさそうに思えた作例を採用しました。</p>
+<section class="footer">
+<a href="/y23-il1j/">情報リテラシ第一</a> / <a href="/y23-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

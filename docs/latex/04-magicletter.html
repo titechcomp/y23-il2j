@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>特殊な文字の扱い (%, &amp;, $, #, \, _, {, })</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y21-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y21-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y21-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y21-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">特殊な文字の扱い (<code>%</code>, <code>&amp;</code>, <code>$</code>, <code>#</code>, <code>\</code>, <code>_</code>, <code>{</code>, <code>}</code>)</h1>
+</header>
+<section class="header">
+<a href="/y21-il1j">情報リテラシ第一</a> / <a href="/y21-il2j">情報リテラシ第二</a>
+</section>
+<p>いくつかの文字はpLaTeXのなかで特殊な扱いを受けます。</p>
+<p>たとえば<code>%</code>はコメントの始まりを表す記号です。ですので、文章中に<code>%</code>と書くと<code>%</code>とその行の<code>%</code>の後ろに続く部分は出力されません。</p>
+<p>同様に<code>$</code>は数式モードの表現に、<code>&amp;</code>は表や連立方程式の書式に、<code>~</code>は明示的な一文字分の空白を表します。これらの特殊な文字を入力するには特別な配慮を要します。</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>出力したい文字</td>
+<td><code>%</code></td>
+<td><code>&amp;</code></td>
+<td><code>$</code></td>
+<td><code>#</code></td>
+<td><code>\</code></td>
+<td><code>_</code></td>
+<td><code>{</code></td>
+<td><code>}</code></td>
+</tr>
+<tr class="even">
+<td>pLaTeXの記法</td>
+<td><code>\%</code></td>
+<td><code>\&amp;</code></td>
+<td><code>\$</code></td>
+<td><code>\#</code></td>
+<td><code>$\backslash$</code></td>
+<td><code>\_</code></td>
+<td><code>\{</code></td>
+<td><code>\}</code></td>
+</tr>
+</tbody>
+</table>
+<p>ここの記述は<a href="https://researchers.shiga-u.ac.jp/html/100002468_ja.html">熊澤先生</a>の解説ページを参考にして書きました。</p>
+<section class="footer">
+<a href="/y21-il1j/">情報リテラシ第一</a> / <a href="/y21-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>ターミナルからの操作</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y22-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y22-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y22-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y22-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">ターミナルからの操作</h1>
+</header>
+<section class="header">
+<a href="/y22-il1j">情報リテラシ第一</a> / <a href="/y22-il2j">情報リテラシ第二</a>
+</section>
+<h1 id="グラフィカルユーザインタフェイスと文字型のインタフェイス">グラフィカルユーザインタフェイスと文字型のインタフェイス</h1>
+<p>グラフィカルユーザインタフェイス(Graphical User Interface；略してGUI)とは１９７０年初頭に提案されたデスクトップメタファ（机の上での事務作業のなぞらえたもの）です。実際の事務作業においては、机上にさまざまな書類が散乱しがちです。それをフォルダやバインダーに挟んで整理し、それを引き出しや整理戸棚がそろったオフィス家具に収納することで事務の効率を向上しています。これに倣ってデジタルデータにファイルのアイコンという見掛けを与えるファイルのメタファ、ファイルに保存された情報を束ねるフォルダのメタファを通してコンピュータの上でも効率的に情報を整理する方式がグラフィカルユーザインタフェイスの一面です。</p>
+<p>グラフィカルユーザインタフェイスの実現のために、ビットマップディスプレイとマウスに代表されるポインティングデバイスが考案されました。</p>
+<p>では、７０年代以前のコンピュータはどうだったのかというと、もちろんファイルやフォルダに類する概念はあったのですが、それが絵として見えるようにはなってませんでした。だいたいどんな感じかというと</p>
+<figure>
+<img src="images/3/cui.png" alt="昔はコマンドを使ってコンピュータを操作したものです" /><figcaption>昔はコマンドを使ってコンピュータを操作したものです</figcaption>
+</figure>
+<p>昔のコンピュータには絵をきれいに表示するのに不可欠な高解像度ディスプレイもその上でユーザの意図を指し示すためのマウスもなかったので、なにからなにまでキーボードを利用してコンピュータに指示をだしていたのです。このような昔風のコンピュータとの対話の仕方のことを<strong>文字型のインタフェイス</strong>と呼ぶことがあります。</p>
+<p>「なにそれ、文字型のインタフェイスって、５０年も昔のことを言っているの？そんなの今どき、使うわけないでしょ。なんのアナクロ。もしかして罰ゲーム？」とか言いたくなる気持ちはわかりますけれど、CUIは今もプロフェッショナルな世界では厳然と利用され続けています。そして、ときとして現代的なGUIよりも遥かに効率的に仕事を進めることができます。それが回顧主義でも、罰ゲームでもなく、この授業でCUIを取り上げる理由です。</p>
+<p>CUIを用いることで以下のようなことがあっという間に遂行できます。</p>
+<ol type="1">
+<li><p>100個のセンサーから毎時送られるデータがあったとします。これを金曜の晩に、整理するのがあなたの仕事です。一週間で100 * 24 * 7 = 16,800個のファイルがあるので人間技とも思えません。手作業でやっていては間違いも起きやすいですし、土曜日のデートも望むべくもありません。</p>
+<p>センサーごとのフォルダにきれいに分類するのはCUIを用いればあっという間なのに。。。</p></li>
+<li><p>上司がこともなげに月曜日までにセンサーごとにデータを集計してグラフにまとめるように指示を出しました。上の例では各センサーは、一週間で24*7=168個のデータを送ってきます。これを手作業で折れ線グラフにした画像ファイルを各センサーごとに作成するんですか。これで日曜日の予定もパーです。</p>
+<p>CUIを用いれば、これもあっという間なのに。。。</p></li>
+<li><p>今度は研究所長からの急な依頼です。昨晩、明らかになったセンサーの異常に関して、研究所に急な取材があるので100個のセンサーからやってくるデータを２時間以内に統合してグラフにまとめて欲しいと言ってます。完全な無理ゲー！</p>
+<p>CUIを知っているか否かが、あなたの研究者生命を左右することもあるんです。大したことはないから、早いうちに親しんでおくと安心ですよ。</p></li>
+</ol>
+<p>CUIを用いるもうひとつの恩恵は、遠隔のコンピュータのアクセスが容易な点です。遠隔のコンピュータなんて操作しないと思うかもしれませんけれども、自然科学の大規模共同研究、生命科学のゲノム情報の解析、工学分野や社会システムのシミュレーションでビッグデータを扱うことは普通のことになっています。そのビッグデータを扱うために遠隔の強力なコンピュータの利用は不可欠です。この点からもCUIが利用できることは専門分野においてあなたのプレゼンスを差別化するポイントになります。</p>
+<h1 id="ターミナル---cui-のためのアプリケーション">ターミナル - CUI のためのアプリケーション</h1>
+<p>Macのユーティリティに<strong>ターミナル</strong>と呼ばれるものがあります。CUIを用いるときはターミナルを立ち上げて、そこに適切なコマンドを入力することによって操作を行います。</p>
+<ul>
+<li><p>ユーティリティフォルダを開く方法については、<a href="files">すでに学びました</a>。</p></li>
+<li><p>Windowsにも<strong>cmd.exe</strong>という、ターミナルに類似のユーティリティがあります。Windows 10でcmd.exeを起動するには、Windows-Sで表示される画面でcmdと入力して下さい。
+  WindowsとMacではコマンドの体系が大きく異なります。Macで利用可能なコマンドはWindowsでは動きません。Windows 10の大幅改訂時には、Macと類似したコマンド体系がWindowsに導入されるという噂もあったのですが、、、</p></li>
+</ul>
+<h2 id="ちょっと嬉しいコマンドその---calコマンド">ちょっと嬉しいコマンド：その１ - <code>cal</code>コマンド</h2>
+<style type="text/css">
+img[alt="calコマンドの実行結果"],
+img[alt="cal 7 2018コマンドの実行結果"],
+img[alt="cal 9 1752コマンドの実行結果"] {
+  width: auto;
+}
+</style>
+<p><code>cal</code>コマンドを試してみましょう。</p>
+<figure>
+<img src="images/3/cal.png" alt="calコマンドの実行結果" /><figcaption><code>cal</code>コマンドの実行結果</figcaption>
+</figure>
+<p><code>cal</code>コマンドはこの月のカレンダーを表示します。(この部分は2018年の6月に書かれたのでこのような表示になっていますが、みなさんの手元では違う年月のカレンダーが表示されているはずです。)</p>
+<p>ターミナルで利用できるコマンドは、今の<code>cal</code>コマンドのように単純に実行するだけでなく、しばしばコマンド名に続けて引数（ひきすう）を与えることがあります。たとえば、<code>cal</code>コマンドに<code>2018</code>という引数を与えて<code>cal 2018</code>を実行してみましょう。</p>
+<figure>
+<img src="images/3/cal-2018.png" alt="cal 2018コマンドの実行結果" /><figcaption><code>cal 2018</code>コマンドの実行結果</figcaption>
+</figure>
+<p>今度は年間カレンダーを表示できました。</p>
+<p><code>cal</code>コマンドはさらに二つの引数をとることができます。最初の引数が月、残りが西暦にあたります。この機能を使えば、あなたが生まれた月のカレンダーを眺めることができますよ。</p>
+<figure>
+<img src="images/3/cal-7-2018.png" alt="cal 7 2018コマンドの実行結果" /><figcaption><code>cal 7 2018</code>コマンドの実行結果</figcaption>
+</figure>
+<p><strong>オマケ</strong>（なんじゃこりゃ？）</p>
+<figure>
+<img src="images/3/cal-9-1752.png" alt="cal 9 1752コマンドの実行結果" /><figcaption><code>cal 9 1752</code>コマンドの実行結果</figcaption>
+</figure>
+<p>西暦1752年にそれまで利用していたユリウス暦から、グレゴリウス暦に以降することで長年にわたって閏年を無視してきたつけを開放したんですが、こんな無茶なことをやったんですね。</p>
+<p><strong>ここまでのまとめ</strong></p>
+<ul>
+<li><p>ターミナルのコマンド実行では、先頭にコマンドの名前を指定する。</p></li>
+<li><p>コマンドに引数を与えるときには、コマンドや引数を空白で区切る。</p></li>
+</ul>
+<h2 id="ちょっと嬉しいコマンドその---bcコマンド">ちょっと嬉しいコマンド：その２ - <code>bc</code>コマンド</h2>
+<p>実行してちょっと嬉しいコマンドの例の第三弾として<code>bc</code>コマンドを紹介します。このコマンドは簡易電卓のコマンドです。<code>cal</code>コマンドはカレンダーを表示したらすぐに終りました。一方、<code>bc</code>コマンドは電卓で計算するための数式を計算し続けます。<code>quit</code>を受け取るまでは<code>bc</code>コマンドはひたすら、あなたの忠実な計算機として働きます。</p>
+<pre><code>$  bc -l
+10^8
+100000000
+sqrt(2)
+1.41421356237309504880
+c(5)^2 + s(5)^2
+.99999999999999999998
+e(0)
+1.00000000000000000000
+e(1)
+2.71828182845904523536
+l(e(5))
+4.99999999999999999999
+quit</code></pre>
+<p><code>bc</code> (basic calculator)は簡易電卓です。<code>bc</code>コマンドを実行するときに，上の例のように<code>-l</code>引数を指定するといくつかの関数が利用できるようになります。案外便利です。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">関数の名前</th>
+<th style="text-align: left;">役割</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">sqrt(x)</td>
+<td style="text-align: left;">平方根</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">c(x)</td>
+<td style="text-align: left;">cos</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">s(x)</td>
+<td style="text-align: left;">sin</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">e(x)</td>
+<td style="text-align: left;">exp (指数関数)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">l(x)</td>
+<td style="text-align: left;">log (対数関数)</td>
+</tr>
+</tbody>
+</table>
+<p>前述のとおり、上の例の最後にある<code>quit</code>は電卓の終了を指示しています。</p>
+<h1 id="ファイルを操作するためのコマンド">ファイルを操作するためのコマンド</h1>
+<p>ファイルの名前の変更、複製、コピー、ペーストは簡単です。いくつかの方法があります。</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 11%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">ファイルの操作</th>
+<th style="text-align: left;">コマンド</th>
+<th style="text-align: left;">使用例とコマンド使用の意図</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">名前の変更</td>
+<td style="text-align: left;"><code>mv A B</code></td>
+<td style="text-align: left;"><code>mv output.data 2016-06-25-xray-ab.csv</code> <br/><br/> <code>output.data</code>という名称では後々、混乱しないようにファイル名に日付と実験内容を記録することにした。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">複製</td>
+<td style="text-align: left;"><code>cp A A'</code></td>
+<td style="text-align: left;"><code>cp IMG01234.JPG 2016-06-25-telescope.jpg</code> <br/><br/> デジカメから取り込んだ望遠鏡の写真に日付と内容がわかるように名前をつけた</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">削除</td>
+<td style="text-align: left;"><code>rm A</code></td>
+<td style="text-align: left;"><code>rm IMG01234.JPG</code> <br/><br/> 不要になったファイルをいつまでも残しておくと混乱するので、明らかに無駄なファイルは削除しておく。いったん<code>rm</code>コマンドを実行して削除したデータは復元できないので、十分に気をつけて実行すること。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">コピー</td>
+<td style="text-align: left;"><code>pbcopy &lt; A</code></td>
+<td style="text-align: left;"><code>pbcopy &lt; page1999-pagerank.pdf</code> <br/> 今はGoogleの社長になっているPageとBrinが書いた博士論文をコピーする</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ペースト</td>
+<td style="text-align: left;"><code>pbpaste &gt; B</code></td>
+<td style="text-align: left;"><code>pbpaste &gt; google-paper.pdf</code> <br/> コピーされた内容を <code>pbpaste</code> するとコピーした内容が google-paper.pdf という名前のファイルで保存される</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">テキストファイルの内容の表示</td>
+<td style="text-align: left;"><code>cat A</code></td>
+<td style="text-align: left;"><code>cat fig5.plot</code> <br/> <code>fig5.plot</code> という名前のテキストファイルの内容を確認するために表示する．<br/> 指定されたファイルがテキストファイルでない場合は謎の記号の羅列を見せられて焦る．指定されたファイルが巨大で，たとえば，何万行もあるとそれらすべてを表示する間，なにもできないので泣きたくなる．</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ファイルをアプリケーションで開くためのコマンド">ファイルをアプリケーションで開くためのコマンド</h1>
+<p>ターミナルでCUI環境を利用しているときでも、画像を見たくなったり、ワープロを起動したくなることはあります。そんなときに、<code>open</code>コマンドは便利です。基本的には<code>open -a アプリ名 ファイル名</code>で指定したファイルを指定したアプリケーションで開くことができます。</p>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 7%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">操作</th>
+<th style="text-align: left;">コマンド</th>
+<th style="text-align: left;">使用例とコマンド使用の意図</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">JPEG画像を開く</td>
+<td style="text-align: left;"><code>open A.jpg</code></td>
+<td style="text-align: left;"><code>open 2016-06-25-telescope.jpg</code> <br/> 標準の画像ビューアのプレビューが写真を表示する</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PDF文書を開く</td>
+<td style="text-align: left;"><code>open A.pdf</code></td>
+<td style="text-align: left;"><code>open google-paper.pdf</code> <br/> 標準のPDFビューアのAdobe Acrobatが文書を表示する</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PDF文書をプレビューで開く</td>
+<td style="text-align: left;"><code>open -a preview A.pdf</code></td>
+<td style="text-align: left;"><code>open -a preview google-paper.pdf</code> <br/> Adobe AcrobatではなくプレビューでPDFファイルを開く</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">テキストファイルを開く</td>
+<td style="text-align: left;"><code>open A.txt</code></td>
+<td style="text-align: left;"><code>open memo.txt</code> <br/> すでにmemo.txtというファイルが存在するときに、このコマンドを実行すると、標準のテキストエディタでこのファイルを開く。まっさらなMacの場合、標準のテキストエディタはテキストエディットなので、文字化けを生じる可能性がある</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">テキストファイルを指定したテキストエディタで開く</td>
+<td style="text-align: left;"><code>open -a T A.txt</code></td>
+<td style="text-align: left;"><code>open -a coteditor memo.txt</code> <br/> CotEditor を使ってテキストファイルを開く。他のテキストエディタを用いる方法は後述のとおり。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">フォルダを表示する</td>
+<td style="text-align: left;"><code>open DIR</code></td>
+<td style="text-align: left;"><code>open .</code> 作業ディレクトリに対応するフォルダを Finder で表示する．（<code>.</code> の意味と作業ディレクトリについては後述）<br/><code>open Desktop</code> 作業ディレクトリに含まれる <code>Desktop</code> という名前に対応するフォルダを Finder で表示する．</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Atomの場合は <code>open -a atom A.txt</code></li>
+<li>CotEditorの場合は <code>open -a coteditor A.txt</code></li>
+<li>Emacsの亜種のAquamacsの場合は <code>open -a aquamacs A.txt</code></li>
+<li>Sublime Textの場合は <code>open -a 'sublime text' A.txt</code> 注：Sublime Textのように名称に空白を含むアプリケーションについてopenコマンドを利用するときは、そのままでは空白がコマンドの引数の区切りと解釈されてしまいます。そのような事故を避けるためにこのように引用符を用います。</li>
+<li>MacVimの場合は <code>open -a macvim A.txt</code></li>
+</ul>
+<h1 id="ディレクトリとその構造そしてパス">ディレクトリとその構造、そしてパス</h1>
+<p>ディレクトリとはCUIの世界でフォルダを意味するものと思って下さい．GUIの世界におけるファイルとフォルダとCUIの世界におけるファイルとディレクトリは概ね似たようなものです．GUIの世界のフォルダに親子関係があるようにディレクトリにも親子関係があります．GUIの世界では，子フォルダを開くときは子フォルダをクリックしたりダブルクリックしました．CUIの世界で子フォルダを参照するときには，<code>/</code>, <code>..</code>, <code>~</code>, <code>.</code> などといった記号を用いた独特な記法を使います．</p>
+<p>Finderを使っているときには，Finderのウィンドウに現在，見ているフォルダの情報としてファイルのリストが表示されます．この「<strong>現在，見ているフォルダ</strong>」を，CUIの世界では<strong>作業ディレクトリ</strong>と言います．作業ディレクトリがホームディレクトリのときに，あるファイル名を指示すると，それはホームディレクトリに含まれているファイルを意味します．ほかのディレクトリに同名のファイルがあるかもしれませんが，そちらではなく，ホームディレクトリにあるものを指します．CUIの世界では，作業ディレクトリを基準とした<strong>パス</strong>という記法によって，操作対象のファイルを指定します．</p>
+<p>Finderで新しいウィンドウを開くとたぶんホームフォルダが開くと思います．同様に，ターミナルの新しいウィンドウを開くと，その時点での作業ディレクトリはホームディレクトリ（ホームフォルダに対応したディレクトリ）です．ここで <code>ls</code> コマンドという，ディレクトリが含んでいるファイルのリストを表示するためのコマンドを実行すると，ホームディレクトリに含まれるファイルやディレクトリが表示されます．以下は私のノートパソコンで実行した結果です．</p>
+<pre><code>Applications
+Desktop
+Documents
+Downloads
+Dropbox (smartnova)
+Dropbox (個人)
+Software
+Library
+Movies
+Music
+Pictures
+Public
+VirtualBox VMs
+anaconda3
+bin
+projects
+tmp
+var</code></pre>
+<p>Finderの表示と見比べると微妙な違いに気づくかと思います．まず，Finderにはダウンロード，パブリック，ピクチャ，ミュージック，ムービー，文書というフォルダが表示されますが，<code>ls</code>コマンドが表示したファイルには表示されません．でも，よくよく見てみると英語名で対応するディレクトリがあります．</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Finderに表示されるフォルダの名前</th>
+<th style="text-align: left;">lsが表示するディレクトリの名前</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ダウンロード</td>
+<td style="text-align: left;">Downloads</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">パブリック</td>
+<td style="text-align: left;">Public</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ピクチャ</td>
+<td style="text-align: left;">Pictures</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ミュージック</td>
+<td style="text-align: left;">Music</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ムービー</td>
+<td style="text-align: left;">Movie</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">文書</td>
+<td style="text-align: left;">Documents</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">アプリケーション</td>
+<td style="text-align: left;">Applications</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ユーティリティ</td>
+<td style="text-align: left;">Utilities</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ライブラリ</td>
+<td style="text-align: left;">Libraries</td>
+</tr>
+</tbody>
+</table>
+<p>実は，MacOSにおける標準的なフォルダの実体の名前は英語名なんです．でも，システムの言語環境を英語以外に設定すると，その本当の名前はFinderの上では隠されて，各国語に翻訳されたものが表示されます．逆にターミナルを使っているときは，翻訳される前の英語名が表示されます．</p>
+<p>もうひとつの違いは，ファイルの表示順です．基本的にはどちらもアルファベット順なのですが，ターミナルでは大文字で始まるファイル名に続いて小文字で始まるファイル名が表示されます．一方，Finderでは大文字と小文字の区別はせずにアルファベット順となっています．</p>
+<p>MacやWindowsのように異なる言語圏の人々が共通に利用しているシステムの場合，どこかで翻訳されていない生の姿が見えたりするものです．これを機会に翻訳という便利な仕組みを享受しつつ，翻訳の皮がはがれたときに必要以上に驚かないでいたいものです．</p>
+<p>さて，ターミナルでファイルのありかを指し示すときには <code>/</code> という記号を用います．この記号の意味は「〜という名前のディレクトリのなかにある」と解釈できます．たとえば，<code>il2a-data/he1/time-join.dat</code> という記述は，「<code>il2a-data</code>という名前のディレクトリのなかにある，<code>he1</code>という名前のディレクトリのなかにある，<code>time-join.dat</code>という名前のファイル」と解釈できます．</p>
+<p>ファイルのありかを指し示すのに用いる記号には<code>/</code>のほかにもいくつかあります．以下に紹介します．</p>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 29%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">記号</th>
+<th style="text-align: left;">記号の意味</th>
+<th style="text-align: left;">例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>ファイル名</code></td>
+<td style="text-align: left;">作業ディレクトリにあるファイル</td>
+<td style="text-align: left;">作業ディレクトリに<code>time-join.data</code>というファイルがあったとき，<code>time-join.data</code>という名前はそのファイルを指し示します．</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>/</code></td>
+<td style="text-align: left;">ルートディレクトリ</td>
+<td style="text-align: left;"><code>/</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>/A</code></td>
+<td style="text-align: left;">ルートディレクトリ直下のAディレクトリ</td>
+<td style="text-align: left;"><code>/Applications</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>/A/B</code></td>
+<td style="text-align: left;"><code>/A</code>ディレクトリの子供のBディレクトリ</td>
+<td style="text-align: left;"><code>/Applications/Utilities</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>..</code></td>
+<td style="text-align: left;">作業ディレクトリの親ディレクトリ</td>
+<td style="text-align: left;">作業ディレクトリが <code>/Users/wakita/work/il2a-data/he1</code> のとき，<code>..</code> は<code>/Users/wakita/work/il2a-data</code>を指し示します．</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>../..</code></td>
+<td style="text-align: left;">作業ディレクトリの親の親</td>
+<td style="text-align: left;">作業ディレクトリが <code>/Users/wakita/work/il2a-data/he1</code> のとき，<code>..</code> は<code>/Users/wakita/work</code>を指し示します．</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>~</code></td>
+<td style="text-align: left;">ホームディレクトリ</td>
+<td style="text-align: left;"><code>~</code>はあなたのホームディレクトリを指し示します．</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>.</code></td>
+<td style="text-align: left;">作業ディレクトリ</td>
+<td style="text-align: left;"><code>./</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="ディレクトリの操作に用いるコマンド">ディレクトリの操作に用いるコマンド</h1>
+<h2 id="作業ディレクトリにかかわる操作">作業ディレクトリにかかわる操作</h2>
+<p>以下のようなフォルダの構造があることにしましょう。このフォルダ構造の上のあちこちに作業ディレクトリを変更しながら作業することを想定したコマンドを紹介します。基本的には<code>cd</code>コマンドしか使わないのですが、使い方によってフォルダ階層のさまざまなフォルダに簡単に移動できることがわかります。</p>
+<figure>
+<img src="images/3/work-il2a-data.png" alt="work/il2a-data/plot" /><figcaption>work/il2a-data/plot</figcaption>
+</figure>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 8%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">操作</th>
+<th style="text-align: left;">コマンド</th>
+<th style="text-align: left;">使用例とコマンド使用の意図</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ここはどこ？</td>
+<td style="text-align: left;"><code>pwd</code></td>
+<td style="text-align: left;">Print working directory; 今、作業しているディレクトリのパスを表示</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ホームディレクトリに戻る</td>
+<td style="text-align: left;"><code>cd</code></td>
+<td style="text-align: left;">迷子になって困ったら、ひとまずホームに戻る</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">作業ディレクトリをホームにする</td>
+<td style="text-align: left;"><code>cd ~</code></td>
+<td style="text-align: left;"><code>~</code>はホームディレクトリの省略記法です。ですので、このコマンドは作業ディレクトリをホームにすることにあたります。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">子供のディレクトリに移動</td>
+<td style="text-align: left;"><code>cd D</code></td>
+<td style="text-align: left;"><code>cd plot</code> <br/>作業ディレクトリが<code>/Users/wakita/work/il2a-data</code>だとしたら、実行後の作業場所は<code>/Users/wakita/work/il2a-data/plot</code>になる。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">親のディレクトリに移動</td>
+<td style="text-align: left;"><code>cd ..</code></td>
+<td style="text-align: left;">作業場所を親ディレクトリにする。作業ディレクトリが<code>/Users/wakita/work/il2a-data/plot</code>だとしたら、実行後の作業場所は<code>/Users/wakita/work/il2a-data</code>になる。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">親の親のディレクトリに移動</td>
+<td style="text-align: left;"><code>cd ../..</code></td>
+<td style="text-align: left;">作業場所を親の親ディレクトリにする。作業ディレクトリが<code>/Users/wakita/work/il2a-data/plot</code>だとしたら、実行後の作業場所は<code>/Users/wakita/work</code>になる。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">兄弟のディレクトリに移動</td>
+<td style="text-align: left;"><code>cd ../A</code></td>
+<td style="text-align: left;"><code>cd ../he1</code> <br/>作業場所を兄弟ディレクトリにする。作業ディレクトリが<code>/Users/wakita/work/il2a-data/plot</code>だとしたら、実行後の作業場所は<code>/Users/wakita/work/il2a-data/he1</code>になる。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ファイルを別のディレクトリに移動するための操作">ファイルを別のディレクトリに移動するための操作</h2>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">移動のためのコマンド</th>
+<th style="text-align: left;">例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>mv image.png ..</code></td>
+<td style="text-align: left;">作業ディレクトリにある<code>image.png</code>という名前の画像を親ディレクトリに移動します．</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>mv ./image.png ..</code></td>
+<td style="text-align: left;">上のコマンドと同じです．<code>./</code>を用いることで「ここにある」を強調しているんでしょうか</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>mv ../image.png .</code></td>
+<td style="text-align: left;">作業ディレクトリの親ディレクトリにある<code>image.png</code>という名前の画像ファイルを作業ディレクトリ(<code>.</code>)に移動します．</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>mv image.png ../new-image.png</code></td>
+<td style="text-align: left;">作業ディレクトリにある<code>image.png</code>という名前の画像ファイルを親ディレクトリに<code>new-image.png</code>という名前に変えつつ移動します．</td>
+</tr>
+</tbody>
+</table>
+<p>ファイルだけでなくディレクトリを移動するときも<code>mv</code>コマンドを使います．ディレクトリを移動すると，ディレクトリが含んでいるファイルやディレクトリも一緒に移動します．
+  便利な機能ですけれども，うっかりするとディレクトリ構造が思いがけずに壊れてしまいますから慎重に作業しましょう．<code>mv</code>コマンドの使い方はファイルの移動に用いた方法と一緒なので，説明は省略します．</p>
+<h2 id="ディレクトリ構造を変更するための操作">ディレクトリ構造を変更するための操作</h2>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 6%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>操作</th>
+<th style="text-align: left;">コマンド</th>
+<th style="text-align: left;">使用例とコマンド使用の意図</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>作成</td>
+<td style="text-align: left;"><code>mkdir D</code></td>
+<td style="text-align: left;"><code>mkdir data</code><br/> 
+  作業ディレクトリには，まだ <code>data</code> という名前のディレクトリが存在していないとしよう．このときこのコマンドを実行すると，サブディレクトリとして <code>data</code>が作成される．<br/>
+  <code>mkdir data/xray</code><br/>
+  作業ディレクトリには，<code>data</code>ディレクトリが存在するけれど，まだ<code>data/xray</code>ディレクトリは存在しないときにこのコマンドを実行すると<code>data</code>ディレクトリのサブディレクトリとして<code>xray</code>ディレクトリが作成されます．</td>
+</tr>
+<tr class="even">
+<td>ディレクトリ階層の作成</td>
+<td style="text-align: left;"><code>mkdir -p D/E/F</code></td>
+<td style="text-align: left;"><code>mkdir -p data/xray</code><br/>作業ディレクトリには<code>data</code>がないとき，したがって<code>data/xray</code>サブディレクトリもないときに，<code>mkdir</code>コマンドの<code>-p</code>オプションを用いると，これら二つのディレクトリを一気に作成できます．</td>
+</tr>
+<tr class="odd">
+<td>名前の変更</td>
+<td style="text-align: left;"><code>mv D1 D2</code></td>
+<td style="text-align: left;"><code>mv data xray-data</code><br/>作業ディレクトリに<code>data</code>ディレクトリがあって，<code>xray-data</code>というディレクトリが存在しないとき，<code>data</code>ディレクトリの名称を<code>xray-data</code>に変更します．<br>
+<code>mv xray-data data/xray</code><br/>作業ディレクトリが<code>data</code>サブディレクトリと<code>xray-data</code>サブディレクトリをともに持つときに，後者を<code>xray</code>という名前で<code>data</code>のサブディレクトリにする．</td>
+</tr>
+<tr class="even">
+<td>削除</td>
+<td style="text-align: left;"><code>rm -rf D</code></td>
+<td style="text-align: left;"><code>rm -rf temporary</code><br/>作業ディレクトリが<code>temporary</code>サブディレクトリを含むときに，
+  そのサブディレクトリに保存されているすべてのファイルとも丸っと削除する．使い方を間違えるととても悲しいことになります．<br/>
+  <code>rmdir temporary</code>はディレクトリ内にサブディレクトリやファイルがあるときはエラーが出ます．</td>
+</tr>
+<tr class="odd">
+<td>移動</td>
+<td style="text-align: left;"><code>mv D1 D2</code></td>
+<td style="text-align: left;"><code>mv xray-data data</code><br/>作業ディレクトリにふたつのサブディレクトリ<code>xray-data</code>と<code>data</code>があるときに，前者を後者のサブディレクトリに移動します．</td>
+</tr>
+<tr class="even">
+<td>複製</td>
+<td style="text-align: left;"><code>cp -r D1 D2</code></td>
+<td style="text-align: left;"><code>cp -r data/xray backup/xray/2017-06-14</code><br/>作業ディレクトリに<code>data/xray</code>サブディレクトリが存在するときに，それそのサブディレクトリが抱えているすべてのファイルとも丸っと複製して，<code>backup/xray/2017-06-14</code>という名前のサブディレクトリとして保存します．</td>
+</tr>
+</tbody>
+</table>
+<p>コマンドを覚えきれない人が無理にコマンドを使うと，ディレクトリを丸ごと削除してしまうかもしれません．Finderからの作業の場合は，<strong>編集メニュー</strong>を使って，作業のやりなおしができますけれども，コマンドのやりなおしはできません．不慣れなうちは，ディレクトリの操作にはFinderを用いるのが懸命かもしれません．この場合，前述の <code>open .</code> コマンドが便利です．</p>
+<section class="footer">
+<a href="/y22-il1j/">情報リテラシ第一</a> / <a href="/y22-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

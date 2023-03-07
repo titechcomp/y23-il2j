@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>相互参照 (\labelコマンドと\refコマンド)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y21-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y21-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y21-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y21-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">相互参照 (<code>\label</code>コマンドと<code>\ref</code>コマンド)</h1>
+</header>
+<section class="header">
+<a href="/y21-il1j">情報リテラシ第一</a> / <a href="/y21-il2j">情報リテラシ第二</a>
+</section>
+<h2 id="見出しの相互参照">見出しの相互参照</h2>
+<p>章や節などの見出し、enumerate環境の項目番号、図表番号などはpLaTeXeが自動的にふります。このため、新しい章を加えたり、章の順序を入れ替えても、既存の章の番号を自分でつけ直したりする手間が省ける点が便利です。</p>
+<p>これらの自動的にふられた番号を参照するためには、番号が定まる箇所でその番号に「名前」をつけ、参照したい個所でその名前を使って番号を参照します。番号に名前を与えるコマンドが<code>\label</code>で、<code>\label</code>コマンドで与えられた名前を使って番号を参照するコマンドが<code>\ref</code>コマンドです。</p>
+<p><code>\section</code>コマンドのような<a href="03-sectioning.html">見出し用コマンド</a>を参照するためには、見出しコマンドの直後に<code>\label</code>コマンドを使ってその見出しに名前を与えます。そして本文中のほかの箇所でその見出しを参照したい場合には、その名前を<code>\ref</code>コマンドに与えます。</p>
+<p>例を見てみましょう。「相対論の着想」という見出しがあったとします。この見出しに該当する<code>\section</code>コマンドに続けて以下のように<code>\label {着想}</code>というコマンドを挿入することで、<code>\section</code>コマンドが生成する節番号に「着想」という名前をつけることができます。</p>
+<pre><code>\section {相対論の着想}
+\label {着想}
+20世紀においてもっとも偉大な．．．</code></pre>
+<p>次にこのように「着想」と名付けた節の番号を参照する方法について見ていきましょう。以下のように<code>\ref</code>コマンドのパラメタに「着想」を与えれば、この箇所の<code>\ref</code>コマンドに対応する場所に上の見出しの番号が挿入されます。</p>
+<pre><code>\ref {着想}節で見てきたように、アインシュタインの相対論についての着想は．．．</code></pre>
+<h2 id="箇条書き図表数式などの相互参照">箇条書き、図表、数式などの相互参照</h2>
+<p>pLaTeXが自動的に番号をつけるのは見出しだけには限りません。ほかに、enumerate環境を用いた箇条書きの項目番号、figure環境を用いた図の番号、table環境を用いた表の番号、数式番号なども相互参照の対象となります。こういったものについても前述の<code>\label</code>コマンドと<code>\ref</code>コマンドを利用することができます。</p>
+<p>図表番号や数式番号の参照については、それぞれ<a href="06-figure.html">図の挿入方法の解説</a>、<a href="06-table.html">表の挿入方法の解説</a>、<a href="05-math.html">数式の扱いの解説</a>をご覧下さい。</p>
+<h3 id="箇条書きの項目番号の参照の例">箇条書きの項目番号の参照の例</h3>
+<pre><code>以下はウェブに関する最も基礎的な技術を箇条書きに整理したものです。
+enumerate環境を用いることで、ここに挙げた3項目には 1, 2, 3 と
+番号がつけられます。
+
+\begin {enumerate}
+
+\item 世界中に広がるウェブのなかで、個々のウェブページを一意に特定するウェ
+ブページの名前です。ウェブページのなかに他のウェブページの URL を記載する
+ことでハイパーリンクを作成することができます。
+
+\item ウェブサーバに保存されているウェブのデータを取得するための通信
+プロトコルがHTTPです。ウェブブラウザにURLを入力するとURLに対応するウェブ
+サーバに該当するページを要求し、そのページを取得しますが、ここでの通信の作
+法を定めたものがHTTPです。
+
+\item ウェブページの内容を規定する文法です。
+
+\end {enumerate}</code></pre>
+<p>この箇条書きは以下のような感じで表示されます。</p>
+<blockquote>
+<ol type="1">
+<li><p>世界中に広がるウェブのなかで、個々のウェブページを一意に特定するウェブページの名前です。ウェブページのなかに他のウェブページの URL を記載することでハイパーリンクを作成することができます。</p></li>
+<li><p>ウェブサーバに保存されているウェブのデータを取得するための通信プロトコルがHTTPです。ウェブブラウザにURLを入力するとURLに対応するウェブサーバに該当するページを要求し、そのページを取得しますが、ここでの通信の作法を定めたものがHTTPです。</p></li>
+<li><p>ウェブページの内容を規定する文法です。</p></li>
+</ol>
+</blockquote>
+<p>この箇条書きのHTTPに関する記述を文章の他の箇所で参照するときに「ウェブ技術に関する箇条書きの第2項で解説したHTTPは〜」と書いたとします。そのあとで、著者の気紛れから箇条書きの順番を入れ替えたとしたら、「箇条書きの第2項」と書いた箇所も適切に修正しなくてはなりません。でも、修正を忘れる可能性も高そうですね。</p>
+<p>このようなあぶなっかしさを避けるためには、<code>\label</code>コマンドと<code>\ref</code>コマンドを利用するのが賢明です。以下のようにHTTPについての記述の最後に<code>\label {http}</code>コマンドを書いておけば、この<code>\item</code>コマンドが生成する項目番号を<strong>http</strong>というラベルで参照することができます。</p>
+<pre><code>\item ウェブサーバに保存されているウェブのデータを取得するための通信
+プロトコルがHTTPです。ウェブブラウザにURLを入力するとURLに対応するウェブ
+サーバに該当するページを要求し、そのページを取得しますが、ここでの通信の作
+法を定めたものがHTTPです。\label {http}</code></pre>
+<p>項目番号を参照するときには以下のように コマンドを用います。</p>
+<pre><code>ウェブ技術に関する箇条書きの第\ref {http}項で解説したHTTPは〜</code></pre>
+<h2 id="ページ数の相互参照">ページ数の相互参照</h2>
+<p>ここまで<code>\ref</code>コマンドを用いてpLaTeXが自動生成した番号を参照できることを説明しました。場合によっては、都合よく見出しや箇条書きの項目のない箇所を参照したい場合もあります。本の場合だと「123ページに引用した＊＊＊の詩の一節は．．．」などと書きます。このようにページ番号を用いて参照したい場合はどのようにすればいいのでしょう。</p>
+<p>ここまで<code>\label</code>コマンドは番号を生成するコマンドの直後に使いなさいと書きましたが、実は<code>\label</code>コマンドは文書中のどこにでも自由に用いることができるのです。そしてそこで名付けられたラベルを<code>\pageref</code>に与えることで、該当する<code>\label</code>コマンドが表れるページ数を参照できるのです。</p>
+<p>たとえば、前述のウェブ技術に関する記述を本文の全然異なるページから参照することを考えてみます。その場合には、以下のように同じラベルを<code>\pageref</code>コマンドと<code>\ref</code>コマンドを用いることで、ページ数も項目番号もともに参照することができます。</p>
+<pre><code>\pageref {http}ページのウェブ技術に関する箇条書きの第\ref {http}項で解説したHTTPは〜</code></pre>
+<section class="footer">
+<a href="/y21-il1j/">情報リテラシ第一</a> / <a href="/y21-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

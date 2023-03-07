@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>MacユーザのためのpLaTeX環境 (MacTeX)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y23-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y23-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y23-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y23-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">MacユーザのためのpLaTeX環境 (MacTeX)</h1>
+</header>
+<section class="header">
+<a href="/y23-il1j">情報リテラシ第一</a> / <a href="/y23-il2j">情報リテラシ第二</a>
+</section>
+<p>(このページは2017年時点での情報が書かれていますが、TeX Liveは毎年バージョンが新しいものが公開されるため、TeX Live 2017 の2017を現在の年に置き換えて読むとよいでしょう。)</p>
+<h1 id="はじめに">はじめに</h1>
+<p>pLaTeXという文書作成システムはTeX Liveと呼ばれく巨大なソフトウェアパッケージの一部として提供されています。TeX LiveはLinux, macOS (Mac), Windowsで動作します。それぞれのシステムごとにインストール方法は異なります。</p>
+<p>ここではmacOSの上での作業の概略を紹介します。なお、macOS向けには<a href="https://tug.org/mactex/">MacTeX</a>と呼ばれるMac専用のTeX Liveのインストーラが提供されています。以下の説明ではMacTeXを利用したインストール方法を紹介します。</p>
+<h1 id="実習との関わりについて">実習との関わりについて</h1>
+<p>情報リテラシの実習課題は大学の実習室で実施することを想定して設計されています。</p>
+<p>自力で大学と同等の環境を自宅のWindowsやMacに構築することは可能です。また、将来のみなさんの学習活動や研究活動に授業で学んだ知識を実践してくださることは教員一同が望むことでもあります。でも、講義スタッフの人的資源は限られていて、学生さんが抱える個別で特殊な事情に十分に寄り添うことは困難です。自宅のパソコンの設定については、講義スタッフの努力の範囲を越える部分については各学生さんの自助努力に期待せざるを得ません。</p>
+<p>不幸にして、ご自分のパソコンの上にLaTeXの環境を構築できなかったとしてもそれを実習ができないことや宿題を期限内に提出できないことの言い訳にしないで下さい。演習室は健全なLaTeX環境を備えていて、みなさんがやってくることを待っています。</p>
+<p>ご自分のパソコンに上手にソフトウェアを構築できている場合には、そこで実施したファイルなどを実習の成果物として提出しても構わないか否かについては個別の担当教員にご相談下さい。確実な方法としては、自宅で実施し完成させた内容を大学に送付し、大学のTeXShopでタイプセットし直して提出することが考えられます。</p>
+<h1 id="余裕をもってインストールを">余裕をもってインストールを</h1>
+<ul>
+<li><p>インストールには10GB程度のディスクの空き容量が必要そうです。インストールをはじめる前に十分なディスクの空き容量があることを確認して下さい。</p></li>
+<li><p>ダウンロードするソフトウェアパッケージの大きさは3.0GB程度です。公衆ネットワーク回線を用いている場合には契約上の制限や料金体系に気をつけて下さい。極端に性能の悪いネットワークでのインストールは難しいです。</p></li>
+<li><p>良好なネットワークに接続されている環境においてもインストール作業には２時間以上を要するものと思って下さい。ネットワーク性能の悪い場所だったり、パソコンの性能（特にハードディスクの性能と空領域の量）が劣る場合にはその数倍の時間がかかります。時間にゆとりのあるときに実施して下さい。常時監視する必要はありませんので、途中で食事をしたり、お風呂にはいられるとよいでしょう。</p></li>
+</ul>
+<h1 id="なにをインストールするの">なにをインストールするの？</h1>
+<p>MacTeXをインストールします。このなかにpLaTeX組版システム、フォント、3,000以上の組版用のパッケージ、pLaTeXの作業を行うためのソフトウェアなどがすべて含まれています。TeX Live 2017をインストールし、初期設定をすこし変更すれば日本語の文書作成に使えるようになります。</p>
+<h1 id="インストール手順の概略">インストール手順の概略</h1>
+<ol type="1">
+<li><a href="https://tug.org/mactex/mactex-download.html">MacTeXのダウンロードサイトのページ</a>を開いて下さい。このページからMacTeXのインスーラ(<code>MacTeX.pkg</code>)をダウンロードして下さい。2017年5月24日に公開された版の大きさは3.0GBです。</li>
+</ol>
+<!-- 自宅でのダウンロードがうまくいかないひとのために、演習室の環境にMacTeXのインストーラをダウンロードしておきました。このインストーラをお手持ちのUSBメモリなどにコピーして持ち帰り、自宅のMacにインストールできます。
+    
+    ダウンロードしたインストーラの場所は、デスクトップにある**Shader**フォルダのなかの**IL**のなかの**Software**のなかです。ファイル名は`MacTeX.pkg`です。 -->
+<ol type="1">
+<li>ダウンロードが完了したら<code>MacTeX.pkg</code>をダブルクリックして指示にしたがって気長に待てばインストールは終ります。</li>
+</ol>
+<h1 id="インストールの確認とソフトウェアの設定">インストールの確認とソフトウェアの設定</h1>
+<p>MacTeXのアプリケーションは<code>/アプリケーション/TeX</code>にインストールされます。このうち、使用頻度の高い<strong>TeX Shop</strong>と<strong>BibDesk</strong>をDockにドラッグ＆ドロップすると都合がよいでしょう。<strong>TeX Live ユーティリティ</strong>を用いるとMacTeXが包含しているTeX Liveがもつ3,000以上のパッケージを更新して最新の状態を保つことができます。</p>
+<p>東工大の論文執筆実習の最初にTeXShopの設定変更を施すことで日本語文書を執筆できるようにしました。自分のパソコンにTeXShopをインストールしたときも同様の設定変更を施して日本語文書の執筆ができるように設定しましょう。設定方法は、<a href="theme2.html">執筆実習演習のページ</a>を参考にして下さい。</p>
+<section class="footer">
+<a href="/y23-il1j/">情報リテラシ第一</a> / <a href="/y23-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

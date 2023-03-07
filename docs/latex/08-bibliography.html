@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>文献リストとその引用 (bibliography, \cite)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y21-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y21-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y21-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y21-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">文献リストとその引用 (<code>bibliography</code>, <code>\cite</code>)</h1>
+</header>
+<section class="header">
+<a href="/y21-il1j">情報リテラシ第一</a> / <a href="/y21-il2j">情報リテラシ第二</a>
+</section>
+<p>論文のなかでは多くの文献を引用します。こうした文献は通常、論文の一番最後にリストされます。それぞれの論文にはリストの順に番号を振り、読者が容易にその文献を手に入れられるように、できるだけ丁寧に出典の情報を記入します。</p>
+<p>出典の情報としては、以下のようなものを記載します。</p>
+<ul>
+<li>著者のリスト</li>
+<li>論文や本のタイトル</li>
+<li>雑誌論文の場合には、雑誌のタイトル、巻、号、ページ数</li>
+<li>国際会議で発表された論文の場合には、国際会議の会議録の名称、ページ数、国際会議の開催場所</li>
+<li>書籍の場合には出版者</li>
+<li>出版年</li>
+<li>ウェブページの場合には URL と自分がそのページを見た日付</li>
+</ul>
+<h2 id="雑誌論文の例">雑誌論文の例</h2>
+<p>以下は、A. Clauset, M. E. J. Newman, and C. Mooreの3人がPhysical Reviewという雑誌のEシリーズの雑誌に出版したFinding community structure in very large networksという論文についての出典情報です。この論文が、2004年に第70巻066111ページに掲載されたことが分ります。</p>
+<pre><code>A. Clauset, M. E. J. Newman, and C. Moore.
+Finding community structure in very large networks.
+Physical Review E, Vol. 70, p. 066111, 2004.</code></pre>
+<h2 id="国際会議で発表された論文の例">国際会議で発表された論文の例</h2>
+<p>以下の論文は J. Dean and M. R. Henzingerの二人が第8回World Wide Webに関する国際会議で発表したときの会議録 (Proceedings) に掲載された論文の出典情報です。この会議が1999年にカナダのトロントで開催され、論文が会議録の1467ページ〜1479ページに掲載されたことがわかります。Elsevier North-Holland, Inc. は会議録を出した出版者です。</p>
+<pre><code>J. Dean and M. R. Henzinger.
+Finding related pages in the world wide web.
+Proceedings of the 8th international conference on World Wide Web, pp. 1467-1479,
+Toronto, Canada, 1999. Elsevier North-Holland, Inc.</code></pre>
+<h1 id="文献リストの作成">文献リストの作成</h1>
+<p>以下が前述の2つの論文を紹介する文献リストです。</p>
+<pre><code>\begin{thebibliography}{10}
+
+\bibitem{Clauset04Finding-community-structure}
+A.~Clauset, M.~E.~J. Newman, and C.~Moore.
+\newblock Finding community structure in very large networks.
+\newblock {\em Physical Review E}, Vol.~70, p. 066111, 2004.
+
+\bibitem{Dean99Finding-related-pages}
+J.~Dean and M.~R. Henzinger.
+\newblock Finding related pages in the world wide web.
+\newblock In {\em Proceedings of the 8th international conference on World Wide
+  Web}, pp. 1467--1479, Toronto, Canada, 1999. Elsevier North-Holland, Inc.
+
+\end {thebibliography}</code></pre>
+<p>簡単に説明すると、文献リスト全体は<code>\begin {thebibliography}</code>と<code>\end {thebibliography}</code>コマンドで挟まれた領域に書き、各出典情報は<code>\bibitem</code>コマンドを用いて記述します。</p>
+<h2 id="文献番号とそのラベル">文献番号とそのラベル</h2>
+<p><code>\bibitem</code>コマンドは文献番号を出力するためのコマンドなのですが、このコマンドの引数はこの文献番号を参照するためのラベルです。上の例でいえば、Clauset らの論文の文献番号は [1] となり、DeanとHenzingerの論文の文献番号は[2]となります。そして、本文中ではそれぞれの文献を<code>Clauset04Finding-community-structure</code>や<code>Dean99Finding-related-pages</code>というラベルを用いて参照することができます。</p>
+<h1 id="文献の引用">文献の引用</h1>
+<p>上述のように作成した文献リストを本文中で引用するためには<code>\cite</code>コマンドを利用します。たとえば、前述のClausetらの論文を以下のように引用することを考えてみましょう。</p>
+<pre><code>のちにClauset, Newman, Mooreはそれにデータ構造上の改善を施した提案を行った(CNMアルゴリズム) [2]。</code></pre>
+<p>Clausetらの論文の書誌情報には<code>\bibitem</code>コマンドを使って、<code>Clauset04Finding-community-structure</code>というラベルをつけました。platex の原稿のなかでは、このラベルを<code>\cite</code>コマンドを使って以下のように参照することができます。</p>
+<pre><code>のちにClauset, Newman, Mooreはそれにデータ構造上の改善を施した提案を行った
+(CNMアルゴリズム) \cite {Clauset04Finding-community-structure}。</code></pre>
+<h1 id="文献データベースを用いた文献リストの作成">文献データベースを用いた文献リストの作成</h1>
+<p>この例を見てわかるように、文献リストには多くの情報が含まれており、細かな指定をしなくてはなりません。文献リストを手作業できれいに作成することはかなりの負担です。多くの研究者は間違いやすい文献リストの作成を手作業で行うかわりに、文献データベースを使って自動的に文献リストを作成しています。</p>
+<p>pLaTeXを使用する場合に用いられる文献データベースの形式を BibTeX 形式と言います。実習課題のなかの references.bib というファイルが文献データベースにあたります。この文献データベースから文献リストを作成するには <code>pbibtex</code> コマンドを用います。文献リストをCotEditorのようなテキストエディタで編集するのはとても大変です。私はBibDeskというBibTeX形式を利用した文献管理のアプリケーションを利用しています．</p>
+<section class="footer">
+<a href="/y21-il1j/">情報リテラシ第一</a> / <a href="/y21-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

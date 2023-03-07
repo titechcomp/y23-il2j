@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>論文全体の体裁 (\documentclass)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y21-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y21-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y21-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y21-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">論文全体の体裁 (<code>\documentclass</code>)</h1>
+</header>
+<section class="header">
+<a href="/y21-il1j">情報リテラシ第一</a> / <a href="/y21-il2j">情報リテラシ第二</a>
+</section>
+<pre><code>\documentclass {文書の種類}</code></pre>
+<p><code>\documentclass</code>コマンドはTeXファイルの先頭に配置して、文章の種類を定めます。<code>\documentclass</code>コマンドでよく指定される文書のは以下の3種類です。</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>jsarticle</td>
+<td>数ページ程度の短い文書。学生のレポート、学術論文などを含むほとんどすべての文書で利用されます。</td>
+</tr>
+<tr class="even">
+<td>jreport</td>
+<td>レポートという名前になっていますが、学生さんが思い描くようなレポートのことではありません。何十ページもある分厚い文書のことです。</td>
+</tr>
+<tr class="odd">
+<td>jbook</td>
+<td>書籍</td>
+</tr>
+</tbody>
+</table>
+<p><code>\documentclass</code>コマンドには、レイアウトオプションを追加して文書のレイアウトをさらに細かく指定することができます。</p>
+<pre><code>\documentclass [a4j,11pt,fleqno] {jsarticle}
+\documentclass [a4j,fleqn,twocolumn] {jsarticle}</code></pre>
+<p>レイアウトオプションを追加するときは<code>[</code>と<code>]</code>の間にコンマで区切って指定します。主なレイアウトオプションは以下の通りです。</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>10pt</td>
+<td>本文の書くときに用いるフォントの大きさを10ポイントに設定します。これはデフォルトの設定です。</td>
+</tr>
+<tr class="even">
+<td>11pt</td>
+<td>本文の書くときに用いるフォントの大きさを11ポイントに設定します。デフォルトは10ポイントです。</td>
+</tr>
+<tr class="odd">
+<td>12pt</td>
+<td>本文の書くときに用いるフォントの大きさを12ポイントに設定します。デフォルトは10ポイントです。</td>
+</tr>
+<tr class="even">
+<td>a4j</td>
+<td>A4の紙に日本語の文章を書くことを指定します。</td>
+</tr>
+<tr class="odd">
+<td>b5j</td>
+<td>B5の紙に日本語の文章を書くことを指定します。</td>
+</tr>
+<tr class="even">
+<td>landscape</td>
+<td>紙を横長に配置して組版します。</td>
+</tr>
+<tr class="odd">
+<td>tate</td>
+<td>縦組（縦書き）で組版します。</td>
+</tr>
+<tr class="even">
+<td>oneside</td>
+<td>片面印刷の設定です。これはデフォルトの設定です。</td>
+</tr>
+<tr class="odd">
+<td>twoside</td>
+<td>両面印刷に適した設定です。</td>
+</tr>
+<tr class="even">
+<td>onecolumn</td>
+<td>1段組の設定です。これはデフォルトの設定です。</td>
+</tr>
+<tr class="odd">
+<td>twocolumn</td>
+<td>本文を2段組にレイアウトします。デフォルトは1段組。一般に2段組は無駄な余白がなくなるために1ページあたりの文字数が増加する傾向にあります。このため紙面が限られている学会論文などでよく用いられます。</td>
+</tr>
+<tr class="even">
+<td>titlepage</td>
+<td>標題を独立なページにします。</td>
+</tr>
+<tr class="odd">
+<td>notitlepage</td>
+<td>標題を独立したページにしません。</td>
+</tr>
+<tr class="even">
+<td>leqno</td>
+<td>数式番号を数式の左側に出力します。デフォルトでは、数式の右側に出力します。</td>
+</tr>
+<tr class="odd">
+<td>fleqn</td>
+<td>文章の外に独立して書かれた数式を左に寄せる設定です。デフォルトではこのような数式は中央揃えになります。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="文章の標題著者の設定">文章の標題、著者の設定</h1>
+<p>文章の標題や著者などは<code>\begin {document}</code>の前に<code>\author</code>コマンドや<code>\title</code>コマンドなどを使って設定します。</p>
+<h2 id="標題">標題</h2>
+<p>標題を設定するには<code>\title</code>コマンドを使用します。標題が一行に収まらない場合には pLaTeX が（適切ではなく）適当に、行区切りをします。標題が長くなる場合の行区切りは自分で明示的にやった方がいいでしょう。このような強制的な改行には<code>\\</code>コマンドを使います。</p>
+<pre><code>\title {標題}
+\title {とても長〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜い標題は\\
+このように複数の行に分割します}</code></pre>
+<p>標題に副題をつける場合には、副題の直前で強制的に行を区切り、副題には小さめのフォントを用います。小さめのフォントは<code>\small</code>コマンドを用いて以下のように指定します。</p>
+<pre><code>\title {社会問題の社会学\\ \small 構築主義アプローチの新展開}</code></pre>
+<h2 id="著者名">著者名</h2>
+<p>著者名は<code>\author</code>コマンドを使って指定します。著者を複数指定する場合には、それらを<code>\and</code>で区切ります。<code>\and</code>コマンドは複数の著者名をきれいにレイアウトするので、コンマで区切った場合よりもきれいな出力が得られます。</p>
+<pre><code>\author {著者1 \and 著者2 \and 著者3}</code></pre>
+<h2 id="日付">日付</h2>
+<p>論文やレポートを作成した日付を指定するためには<code>\date</code>コマンドを用います。</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><code>\date {平成20年6月10日}</code></td>
+<td>日付を明示的に指定する場合</td>
+</tr>
+<tr class="even">
+<td><code>\date {\today}</code></td>
+<td><code>\today</code> コマンドは pLaTeX 処理を行った日付を出力します</td>
+</tr>
+<tr class="odd">
+<td><code>\date {}</code></td>
+<td>日付を出力したくない場合は空っぽの <code>\date</code> コマンドを利用します</td>
+</tr>
+</tbody>
+</table>
+<h2 id="標題ページの出力">標題ページの出力</h2>
+<p>ここまで<code>\title</code>コマンド、<code>\author</code>コマンド、<code>\date</code>コマンドについて解説しましたが、これらはそれぞれの内容を指定するための設定コマンドで、これらだけでは標題ページは出力されません。実際に標題ページを出力するのは<code>\maketitle</code>コマンドです。<code>\maketitle</code>コマンドは<code>\begin {document}</code>より後ろで使用します。</p>
+<pre><code>\maketitle</code></pre>
+<p>pLaTeXの原稿で標題ページを出力するには以下のような.texファイルを作成します。</p>
+<pre><code>\documentclass [a4j,twocolumn] {jsarticle}
+
+\title{大規模社会ネットワークからのクラスタ構造の抽出}
+\author{鶴見 敏行 \and 脇田 建}
+\date {2008年6月10日}
+
+\begin {document}
+
+\maketitle
+
+%ここに論文の内容を書きます。
+
+\end {document}</code></pre>
+<section class="footer">
+<a href="/y21-il1j/">情報リテラシ第一</a> / <a href="/y21-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

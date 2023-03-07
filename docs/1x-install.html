@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>gnuplot を自宅のパソコンで利用するために</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y23-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y23-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y23-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y23-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">gnuplot を自宅のパソコンで利用するために</h1>
+</header>
+<section class="header">
+<a href="/y23-il1j">情報リテラシ第一</a> / <a href="/y23-il2j">情報リテラシ第二</a>
+</section>
+<hr />
+<h1 id="インストールとは">インストールとは？</h1>
+<p>インターネットで公開されているソフトウェアをパソコンで利用するときは，まず最初にそのソフトウェアを入手して，適切に設定しなくてはいけません．このためにソフトウェアをダウンロードし，ダウンロードしたソフトウェアをインストールします．<strong>ダウンロード</strong>とは，インターネット上のソフトウェアのデータを入手してパソコンに保存することです．ダウンロードしたソフトウェアをパソコンに設定するための作業が<strong>インストール</strong>です．</p>
+<p>iOS で新しいソフトウェアを利用するときは，まず App Store を介してソフトウェアを探して，望みのものを無償のものであれば「入手」し，有償のものであれば購入して入手します．ここでいう「入手」は正確には，ダウンロード＆インストールです．</p>
+<p>パソコンに不慣れな人はしばしば，インターネットからダウンロードしただけでインストール作業が終ったものと勘違いするようです．ダウンロードはソフトウェアの設定作業の前半だけです．残りのインストール作業を終えないとソフトウェアを利用できるようにはなりません．</p>
+<h1 id="windows-で利用するために">Windows で利用するために</h1>
+<p>(2020年5月現在の情報です)</p>
+<p>この節の内容は Windows 向けです．Mac 向けには意味のない情報です．</p>
+<h2 id="gnuplot-の準備">gnuplot の準備</h2>
+<ol type="1">
+<li><p><a href="http://www.gnuplot.info/">gnuplot homepage</a> にアクセスします。</p></li>
+<li><p>Download、Primary download site on SourceForge、（たくさんのバージョン番号がリストされるなかから）5.2.8の順にクリックし、<code>gp528-win64-mingw.exe</code> をクリックしてください。少し待つとダウンロードが始まります。画面がちょろちょろ変化したりして，「これもダウンロードした方がいいんじゃない」みたいなお誘いもあると思います．気にせず無視して下さい．</p>
+<p>なお，<code>5.2.8</code> は現在利用できる <code>gnuplot</code> の安定版のなかで最新のものです．バージョン番号は大きいほど，そのソフトウェアが新しいことを意味します．いまのリストのなかにはこれより新しいものはありませんでしたが、 <code>release candidates</code> という名の下にもっと新しそうなものが配られていることがあります。 <strong>release candidates</strong> は将来，安定版として公開を予定しているものの開発版を意味しているのです．開発版は安定版には組込まれていない最新の機能が盛り込まれているかもしれません．でも，まだ十分にテストされておらずバグも含まれていることも多いです．特に理由がない限り，安定版のなかで最新のものを利用して下さい．</p>
+<p><code>gp528-win64-mingw.exe</code> という名前のつけかたには慣れておきましょう．<code>gp528</code> は <code>gnuplot 5.2.8</code> の省略形．<code>win64</code> は Windows 64bit のこと．最近のパソコンはほとんどが Windows 64bit 対応だと思います．もしも利用している Windows のバージョンが Windows 32bit の場合は，<code>win32</code> を含むファイルを利用しなくてはいけません．</p></li>
+<li><p>ここでの作業は若干の注意を払って下さい．作業を始める前に以下の文章を読み終え，注意点についてよく理解してから作業して下さい．</p>
+<p>ダウンロードした <code>gp528-win64-mingw.exe</code> は Gnuplot のインストーラです．インストーラとは，アプリケーションを設定するためのソフトウェアのことです．<code>gp528-win64-mingw.exe</code> をダブルクリックしてインストール作業を開始して下さい．いろいろ訊ねてきます．使用許諾契約書の同意，情報，インストール先の指定，コンポーネントの選択，プログラムグループの設定については適宜回答して下さい．コンポーネントの選択のなかの「日本語対応」が何を意味するのか知らないのですが，いいことがあるのかもしれません．</p>
+<p>追加タスクの選択には<strong>重要な設定</strong>が含まれています．この設定画面の一番下の項目の<u>「実行ファイルのディレクトリをPATH環境変数に追加する」を必ず選択</u>して下さい．このチェックをし忘れると，コマンドを使って <code>gnuplot</code> を実行することができなくなります．</p></li>
+<li><p><code>cmd</code> (コマンドプロンプト) を起動します。<code>cmd</code> (コマンドプロンプト) は Windows 版のターミナルです．Windows 10では，Win-S (Windows キーを押しながら <code>S</code>)で表示される検索窓に <code>cmd</code> と入力して見つけることができます．</p></li>
+<li><p>コマンドプロンプトのウィンドウのなかで <code>gnuplot</code> を開始してみて下さい．<code>gnuplot&gt;</code> に対してさらに以下のコマンドを使って正弦曲線を表示できれば正しくインストールできたことを確認できます．</p>
+<p><code>plot sin(x)</code></p>
+<p><code>gnuplot</code> コマンドを起動できない場合には，インストール作業に失敗しているのかもしれません．インストールをやり直して下さい．再度インストールする前に，すでにインストールしたものを消去しなくてはいけません．消去するためには，スタートメニューの <code>gnuplot</code> グループから「gnuplot をアンインストールする」を選択します．いろいろ訊ねられるでしょうが，適切に答えれば消去することができます．完全に消去できたら，すでにダウンロードフォルダに保存してあるはずの Gnuplot のインスーラを再度起動して下さい．</p></li>
+<li><p>インストールした状態に満足できたらダウンロードフォルダに残っているインストーラはもはや不要です．いらないファイルはさっさと削除してしまいましょう．</p></li>
+</ol>
+<h1 id="mac-で利用するために-第3者によるバイナリを利用する場合">Mac で利用するために (第3者によるバイナリを利用する場合)</h1>
+<p>この節の内容は Mac 向けです．Windows 向けには意味のない情報です．</p>
+<ol type="1">
+<li><p><a href="http://www.gnuplot.info/">gnuplot homepage</a> にアクセスします。</p></li>
+<li><p>Download のページに「Downloads offered by others」という節があり、そこでバイナリ配布 (特定のバージョンOS向けに構成したソフトウェアを配布すること) をしているページへのリンクがいくつかあります。この中で「csml-wiki.northwestern.edu」では、最新版の gnuplot を Mac OS X 用に構成したものを配布しているようですので、それをダウンロードします。</p></li>
+<li><p>ダウンロードされるファイルは PKG 形式といって、Mac OS X ではダブルクリックすればソフトウェアをインストールことができます。</p></li>
+</ol>
+<h1 id="mac-で利用するために-homebrewを利用する場合">Mac で利用するために (Homebrewを利用する場合)</h1>
+<p>この節の内容は Mac 向けです．Windows 向けには意味のない情報です．</p>
+<p>この節の内容は2019年6月現在、上手くゆかないことが報告されています。</p>
+<p>（繰り返しますが）インストール作業は良好なネットワーク環境のもとで行って下さい．膨大なデータをダウンロードします．</p>
+<h2 id="homebrew-の準備">Homebrew の準備</h2>
+<p>Homebrew とは，Mac 向けのソフトウェア管理システムです．Homebrew をいれておけば，何千もの無料のソフトを簡単にインストールできるようになります．Homebrew はインストール可能な無償のソフトウェアを検索し，それを入手＆インストールするお手伝いをしてくれるとても便利なツールです．情報リテラシ第二で使用する <code>gnuplot</code> も <code>LaTeX</code> も Homebrew を使ってインストールします．ターミナルを使って利用するために，とっつきが悪いかもしれませんが，慣れてくればとても頼りになります．</p>
+<ol type="1">
+<li><p>Xcode のインストール</p>
+<p>Xcode は Apple が無料で配布する Mac 用ソフトウェア開発環境です．</p>
+<p>App Store で検索してインストールして下さい．インストールには時間がかかります．このインストールが終了するまで，次の作業を始めないで下さい．</p>
+<p>Xcode のインストールが終ったら，一旦，Xcode を起動して下さい．ライセンス契約書に承諾しないと Xcode を利用することができません．契約書を読んだ上で，内容を受け入れる場合は Agree (同意) して下さい．契約書に同意しない場合は，以後の作業はできません．</p>
+<p>一分程度で終了します．</p></li>
+<li><p>ターミナル向け開発環境の設定</p>
+<p>ターミナルを起動し，以下のコマンドを実行して下さい．正確を期するためコピー＆ペーストして下さい．</p>
+<p><code>xcode-select --install</code></p>
+<p>Xcode のインストールに比べれば短い時間で終了します．</p></li>
+<li><p>Homebrew のインストール</p>
+<p>ターミナルを起動し，以下のコマンドをターミナルにコピー＆ペーストして実行して下さい．</p>
+<p><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
+<p>Xcode に比べればはるかに短い時間で終了します．ターミナルで <code>brew home</code> コマンドを実行したときに，ウェブブラウザが Homebrew のページを開けば，インストールが完了したことを確認できます．</p>
+<p>Homebrew は，Mac 用の無料のソフトウェアを探し，インストールするためのソフトウェアです．前述の作業が正常にできた場合は，<code>brew</code> という名前のコマンドがターミナルから利用できるようになります．基本的な使い方は <code>brew search ソフトウェアの名前</code> と <code>brew install ソフトウェアの名前</code> です．前者は指定されたソフトウェアをインストール可能か確認し，後者はソフトウェアをインストールします．</p></li>
+</ol>
+<h2 id="gnuplot-installation">gnuplot の準備</h2>
+<p>Homebrew はインストールできていますね？もしできていれば，あとは簡単です．</p>
+<ol type="1">
+<li><p>ターミナルを開いて下さい．</p></li>
+<li><p>（念のため）<code>gnuplot</code> が Homebrew でインストール可能か確認するために以下のコマンドを実行する．</p>
+<p><code>brew search gnuplot</code></p>
+<p><code>gnuplot</code> を名前の一部に含むソフトウェアの名称の一覧が見られるはずです．ここに <code>gnuplot</code> があれば，インストールできることを意味しています．</p></li>
+<li><p><code>gnuplot</code> を対話的に利用するために必要な AquaTerm をインストールします．このインストールでは <code>brew install</code> <strong>ではなく</strong>，<code>brew cask install</code> コマンドを利用していることに注意して下さい．</p>
+<p><code>brew cask install aquaterm</code></p></li>
+<li><p>画像処理のためのソフトウェアをインストールします．</p>
+<p><code>brew install cairo pdflib-lite</code></p></li>
+<li><p><code>gnuplot</code> をインストールします．</p>
+<p><code>brew install gnuplot --with-aquaterm --with-cairo --with-pdflib-lite</code></p>
+<p>しばらく待つと，インストールできた旨，表示されるはずです．実際にインストールされたか否かは，<code>gnuplot</code> コマンドが利用可能になったか否かで判断できます．<code>type gnuplot</code> コマンドを実行してみて下さい．</p>
+<p><code>gnuplot is /usr/local/bin/gnuplot</code> のような表示が見られれば，<code>gnuplot</code> コマンドは利用できるようになっています．</p>
+<p>うまくインストールできたようなので <code>gnuplot</code> を開始してみましょう．開始の仕方は授業でやったように <code>gnuplot</code> コマンドを実行するだけです．<code>gnuplot&gt;</code> に対してさらに以下のコマンドを使って正弦曲線を表示できれば正しくインストールできたことを確認できます．</p>
+<p><code>plot sin(x)</code></p></li>
+</ol>
+<h2 id="gnuplot-reinstallation">すでにインストールした gnuplot の具合が悪い場合の再インストール</h2>
+<p><code>gnuplot</code> をインストールしたけれども，「対話的に利用できない」，「<code>png</code>は出力できるけれど<code>pdf</code>は出力できない」場合には，<code>gnuplot</code> のインストールが不十分な可能性があります．以下の手順で簡単に正常化できます．</p>
+<ol type="1">
+<li><p>既存の <code>gnuplot</code> を削除します．</p>
+<p><code>brew uninstall gnuplot</code></p></li>
+<li><p>上述の「<a href="#gnuplot-installation">gnuplotの準備</a>」を実施して下さい．</p></li>
+</ol>
+<h1 id="スマホやタブレットで利用できる">スマホやタブレットで利用できる？</h1>
+<p>余計なことは考えず，パソコンを使いましょう．</p>
+<section class="footer">
+<a href="/y23-il1j/">情報リテラシ第一</a> / <a href="/y23-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>実習に用いるデータセット</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y23-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y23-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y23-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y23-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">実習に用いるデータセット</h1>
+</header>
+<section class="header">
+<a href="/y23-il1j">情報リテラシ第一</a> / <a href="/y23-il2j">情報リテラシ第二</a>
+</section>
+<p>実習に用いるファイルは<a href="/y23-il2j/arc/theme1-data.zip">こちらからダウンロード</a>して下さい．</p>
+<h1 id="配布データの元となった研究について">配布データの元となった研究について</h1>
+<p>この実習のために配布したデータは，元々は理学部情報科学科に在籍していた鶴見敏行さんが国際学会での発表のために準備したものを用いて，この実習のために一部を取り出したものです．鶴見さんの英文論文を和訳したものは，この授業のテーマの論文執筆の実習でも利用します．</p>
+<p>まず，簡単に「大規模社会ネットワークからのクラスタ構造の抽出」と題する鶴見さんの研究の内容について紹介します．ここで社会ネットワークとは，人間関係を意味します．いまではミクシィといえば，モンスターストライクというスマートフォン向けのゲームを思い浮べるかと思います．でも，１０年前のミクシィは日本最大のソーシャルネットワーキングシステム(SNS)を運営していました．当時は誰しもがミクシィをしていた時代で，計算機演習室でも授業を聞いていない人の画面はミクシィカラーのオレンジだったので遠目でもすぐに見つけることができたくらいです．</p>
+<p>鶴見さんが研究したのは，ミクシィがサービスを急激に拡大していた時期で，ミクシィのサービスを利用している人々の友人関係を分析することで，人々に共通する関心事を見つけられるのではないかという点に興味を持っていました．また，そのような特性を見極めて，当時のやや不安定だったミクシィのサービスの効率を改善することも隠れた目標でした．</p>
+<p>彼の研究に先だつ数年前に，社会ネットワークのなかから濃密な人間関係を高速に見つけられる手法の研究が始まっていました．当時，もっとも注目されていたのがClausetらが提案し，鶴見さんの論文のなかでCNM手法と読んでいる方法です．それまでの提案では，数千人程度の小さな規模の社会ネットワークしか分析できなかったのですが，CNM手法を利用することで十万人規模のネットワークの分析ができ，Clausetの論文には数百万人規模のネットワークへの応用も示唆されていました．</p>
+<p>そこで鶴見さんがCNM法のプログラムを作成し，ミクシィから取得した９０万人程度の友人関係のネットワークの分析を始めました．最初の予想では数日で結果が出るかと思っていたのですが，一週間たっても分析は全体の１０％も進みませんでした．鶴見さんはほかの勉強もしながら，そのプログラムを動かせっぱなしにしていたのですが，一月たった様子から分析には半年以上がかかることが明らかになってきました．巨大な社会ネットワークにCNM法を適用すると最初は効率がよいのですが，だんだんと非効率になる傾向があります．この様子を可視化したグラフが<a href="/y23-il2j/1c-exercise.html">図２：ネットワークの解析に要した時間の時系列遷移</a>です．</p>
+<p>当初の予定では，分析はあっという間に終ることを期待し，分析結果からなにかを発見するつもりでした．でも，思いがけないことに分析がなかなか終らないため，予定を変更し，分析手法自体を研究することにしました．</p>
+<p>まずは，Clausetが数百万まで応用できると書いているにも関わらず，分析がなかなか終らない原因について調べました．そこから明らかになったのは，鶴見さんの論文のなかで提案している<strong>合併比率</strong>と呼ばれる指標にかかわる問題でした．詳しい内容は鶴見さんの論文を読んでいただくことにしますが，合併比率が悪化した様子を表した結果が今回配布する<a href="/y23-il2j/1b-exercise.html">図３：CNM法におけるクラスターの合併比率の推移（片対数）</a>です．</p>
+<p>効率悪化の原因が明らかになったので，その問題を解決する方針を立て，それを実施したのが鶴見さんの研究成果です．彼はHE法，HE’法，HN法と呼ぶ３つの高速化手法を提案しました．Clausetらが提案した既存の提案を少し改良することで，ミクシィから得た５５０万人規模の 友人関係まで分析することができました．この結果は，<a href="/y23-il2j/1a-exercise.html">図６：スケーラビリティ</a>のHN手法として示されています．このグラフは縦軸が処理時間です．HN法はあまりに短時間で終了するため，グラフでは横軸とほぼ重なっています．</p>
+<h1 id="論文執筆に用いたデータについて">論文執筆に用いたデータについて</h1>
+<p>実習のために提供するデータは鶴見さんが国際学会の準備のために用意したデータの一部です．論文では，CNM法とそれを改善したHE法，HE’法，HN法についてのいくつかの比較実験をしています．</p>
+<table>
+<thead>
+<tr class="header">
+<th>手法</th>
+<th>データ数</th>
+<th>データのサイズ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CNM</td>
+<td>16</td>
+<td>36.1 MB</td>
+</tr>
+<tr class="even">
+<td>HE</td>
+<td>20</td>
+<td>14.2 MB</td>
+</tr>
+<tr class="odd">
+<td>HE’</td>
+<td>13</td>
+<td>14.4 MB</td>
+</tr>
+<tr class="even">
+<td>HN</td>
+<td>17</td>
+<td>13.6 MB</td>
+</tr>
+<tr class="odd">
+<td>合計</td>
+<td>66</td>
+<td>78.3 MB</td>
+</tr>
+</tbody>
+</table>
+<p>実際にはこれだけのデータを作成したのですが，論文のなかで用いたデータはその一部だけです． でも，論文に使わなかったデータが無駄になったわけではありません．紙面の都合上，論文には掲載しなかったデータが多かったのですが，発表資料スライドには論文には掲載しなかった図表も提示しためので，結局，無駄になったデータはほとんどなかったと思います．</p>
+<p>みなさんに学んで欲しいのは，研究発表をするときには事前にかなりの分量のデータを用意するという点です．鶴見さんの研究で用いたデータは６６個，総量78.3 MBでした．</p>
+<p>このように数量ともに多くのファイルをどのように管理すればよいのかという点は，この実習の隠れたテーマのひとつです．</p>
+<h1 id="実験データの整理と命名について">実験データの整理と命名について</h1>
+<p>研究で用いたデータセットに含まれる６６個のデータは，分析した４つの手法ごとのフォルダに整理しました．それぞれのデータのファイルはデータの属性名と実験条件を列挙して命名されています．また，各フォルダには，そのフォルダに含まれるデータの内容を説明したファイルを保存してあります．</p>
+<ul>
+<li><code>cnm/</code>: CNM手法のデータを保存したフォルダ．詳細は省略．</li>
+<li><code>he1/</code>: HE手法のデータを保存したフォルダ．詳細は省略．</li>
+<li><code>he2/</code>: HE’手法のデータを保存したフォルダ．詳細は省略．</li>
+<li><code>hn/</code>: HN手法のデータを保存したフォルダ．
+<ul>
+<li><code>etime-join-500K.data</code>: <code>time-join-500K.data</code> のデータを積み上げたもの。<span class="math inline">\((n, t)\)</span> という形式で、最初の <span class="math inline">\(n\)</span> 回の合併に <span class="math inline">\(t\)</span> 秒を要したことを示している。</li>
+<li><code>etime-size.data</code>: 分析対象の社会ネットワークの規模を変化させ、解析にかかった時間を計測した結果。<span class="math inline">\((N, t)\)</span> という形式で大きさが <span class="math inline">\(N\)</span> のネットワークの解析に <span class="math inline">\(t\)</span> 秒要したことを示している。</li>
+<li><code>modularity-etime-500K.data</code>: ネットワークの規模を変化させ、モジュール性の変化を調べた結果。<span class="math inline">\((t, Q)\)</span>という形式で、ノード数 <span class="math inline">\(N\)</span> の大きさのサブセットの解析でモジュール性 <span class="math inline">\(Q\)</span> が得られたときの解析時間がt．</li>
+<li><code>modularity-size.data</code>: ネットワークの規模を変化させ、モジュール性の変化を調べた結果。<span class="math inline">\((N, Q)\)</span>という形式で、ノード数 <span class="math inline">\(N\)</span> の大きさのサブセットの解析でモジュール性 <span class="math inline">\(Q\)</span> が得られたことを示している。</li>
+<li><code>ratio-join.data</code>: 分析中にはクラスタを合併していくが，その合併比率のデータ．<span class="math inline">\((x, r)\)</span>という形式で，<span class="math inline">\(x\)</span>番目の合併における合併比率がrだったことを記録している．さまざまな大きさの社会ネットワークに対して同様に実験を実施した結果を記録した．</li>
+<li><code>time-join-100K.data</code>, <code>time-join-200K.data</code>, …: 10,000回ごとの合併に要した時間を社会ネットワークの大きさを記録した結果．分析対象の社会ネットワークを変化させて実験したので，実験対象の大きさが100K, 200K, …と表されている．</li>
+<li><code>time-size.data</code>: ミクシィの友人関係から切り出したデータの大きさを10万人，20万人，…と変化させて分析したときの，データの大きさ(size)と処理時間(time)の関係を表したもの．</li>
+<li><code>READNE.md</code>: このフォルダに含まれるデータについての簡単な説明．</li>
+</ul></li>
+</ul>
+<h1 id="配布するデータについて">配布するデータについて</h1>
+<ul>
+<li><p><code>cnm</code>/: CNM手法のデータを保存したフォルダ．</p>
+<ul>
+<li><p><code>etime-size.data</code> 分析対象の社会ネットワークの規模を変化させ、解析にかかった時間を計測した結果。<span class="math inline">\((N, t)\)</span> という形式で大きさが <span class="math inline">\(N\)</span> のネットワークの解析に <span class="math inline">\(t\)</span> 秒要したことを示している。</p>
+<p>図５の元データ（図５は他の解析手法に対する <code>etime-size.data</code> と併せて作成しました）</p></li>
+<li><p><code>ratio-join.data</code>: 分析中にはクラスタを合併していくが，その合併比率のデータ．<span class="math inline">\((x, r)\)</span>という形式で，<span class="math inline">\(x\)</span>番目の合併における合併比率が<span class="math inline">\(r\)</span>だったことを記録している．500Kの大きさの社会ネットワークに対する結果だけを配布する．</p>
+<p>図３の元データ</p></li>
+<li><p><code>time-join-100K.data</code>, <code>time-join-200K.data</code>, …: 10,000回ごとの合併に要した時間を社会ネットワークの大きさを記録した結果．分析対象の社会ネットワークを変化させて実験したので，実験対象の大きさが100K, 200K, …と表されている．</p>
+<p>図２の元データ群</p></li>
+</ul></li>
+<li><p><code>he1</code>/: HE手法のデータを保存したフォルダ．</p>
+<ul>
+<li><p><code>etime-size.data</code>: 分析対象の社会ネットワークの規模を変化させ、解析にかかった時間を計測した結果。<span class="math inline">\((N, t)\)</span> という形式で大きさが <span class="math inline">\(N\)</span> のネットワークの解析に <span class="math inline">\(t\)</span> 秒要したことを示している。</p>
+<p>図５の元データ（図５は他の解析手法に対する <code>etime-size.data</code> と併せて作成しました）</p></li>
+<li><p><code>etime-size-M.data</code>: <code>etime-size.data</code>と同様の実験をミクシィから切り出した550万人の友人関係のデータについて適用した結果．実験では，分析を完了できなかったため，合併数=400万までのデータしか入手できていない．</p>
+<p>図６の元データ（図６は他の解析手法に対する <code>etime-size.data</code> と併せて作成しました）</p></li>
+</ul></li>
+<li><p><code>he2</code>/: HE’手法のデータを保存したフォルダ．</p>
+<ul>
+<li><p><code>etime-size.data</code>: 分析対象の社会ネットワークの規模を変化させ、解析にかかった時間を計測した結果。<span class="math inline">\((N, t)\)</span> という形式で大きさが <span class="math inline">\(N\)</span> のネットワークの解析に <span class="math inline">\(t\)</span> 秒要したことを示している。</p>
+図５の元データ（図５は他の解析手法に対する <code>etime-size.data</code> と併せて作成しました）</li>
+<li><p><code>etime-size-M.data</code>: <code>etime-size.data</code>と同様の実験をミクシィから切り出した550万人の友人関係のデータについて適用した結果．</p>
+<p>図６の元データ（図６は他の解析手法に対する <code>etime-size.data</code> と併せて作成しました）</p></li>
+</ul></li>
+<li><p><code>hn</code>/: HN手法のデータを保存したフォルダ．</p>
+<ul>
+<li><p><code>etime-size.data</code>: 分析対象の社会ネットワークの規模を変化させ、解析にかかった時間を計測した結果。<span class="math inline">\((N, t)\)</span> という形式で大きさが <span class="math inline">\(N\)</span> のネットワークの解析に <span class="math inline">\(t\)</span> 秒要したことを示している。</p>
+<p>図５の元データ（図５は他の解析手法に対する <code>etime-size.data</code> と併せて作成しました）</p></li>
+<li><p><code>etime-size-M.data</code>: <code>etime-size.data</code>と同様の実験をミクシィから切り出した550万人の友人関係のデータについて適用した結果．</p>
+<p>図６の元データ（図６は他の解析手法に対する <code>etime-size.data</code> と併せて作成しました）</p></li>
+<li><p><code>ratio-join-500K.data</code>: 分析中にはクラスタを合併していくが，その合併比率のデータ．<span class="math inline">\((x, r)\)</span>という形式で，<span class="math inline">\(x\)</span>番目の合併における合併比率がrだったことを記録している．500Kの大きさの社会ネットワークに対する結果だけを配布する．</p>
+<p>図７の元データ</p></li>
+</ul></li>
+</ul>
+<section class="footer">
+<a href="/y23-il1j/">情報リテラシ第一</a> / <a href="/y23-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

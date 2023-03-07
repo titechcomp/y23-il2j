@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>段落から独立した数式 (\[ … \], align, align*)</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y21-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y21-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y21-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y21-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">段落から独立した数式 (<code>\[</code> … <code>\]</code>, <code>align</code>, <code>align*</code>)</h1>
+</header>
+<section class="header">
+<a href="/y21-il1j">情報リテラシ第一</a> / <a href="/y21-il2j">情報リテラシ第二</a>
+</section>
+<p>段落の内側に数式を書くときには数式の表記を二つの <code>$</code> で挟み込みました。このとき、数式は行の高さに合わせて小さめの表示となります。</p>
+<h2 id="段落の外に単純な数式を記述する場合">段落の外に単純な数式を記述する場合</h2>
+<p>ある程度複雑な数式を記述する場合は、段落の外側に大きな表示で記述することが出来ます。このためには、数式の記述を<code>\[</code>と<code>\]</code>で挟み込みます。たとえば、以下の要領です。</p>
+<pre><code>\[ G^n_m = (U(n), F \cap (U(n) \times U(n))) \]</code></pre>
+<p><span class="math display">\[ G^n_m = (U(n), F \cap (U(n) \times U(n))) \]</span></p>
+<h2 id="段落の外に連立方程式や連立不等式を記述する場合">段落の外に連立方程式や連立不等式を記述する場合</h2>
+<p>連立方程式や連立不等式を記述するには<strong>align 環境</strong>を用います。<code>align</code>環境は、LaTeX 機能の数式機能を拡張するパッケージに含まれています。これを利用するために tex ファイルの冒頭に<code>\usepackage {amsmath}</code>宣言をして下さい。実習用のひな形ファイルの冒頭にはすでにこの宣言が記載されています。</p>
+<pre><code>    \begin {align}
+        3x +  5y &amp;= 7 \\
+       11x + 13y &amp;= 17
+    \end {align}</code></pre>
+<p><span class="math display">\[
+    \begin {align}
+       3x + 5y &amp;= 7 \\
+       11x + 13y &amp;= 17
+    \end {align}
+\]</span></p>
+<p>ここで等号の前に<strong>&amp;</strong>という記号を用いていますが、これはすぐ右の記号で縦の位置を合わせることを指定しています。上の例では、二つの等式の等号が縦にきれいに並ぶように指定しています。</p>
+<p>試してみれば分かるように<code>align</code>環境はそれぞれの式に式番号を付します。式番号が不要な場合には<code>align</code>の代わりに<code>align*</code>環境を用います。例えば、以下のようなやり方です。</p>
+<pre><code>    \begin {align*}
+        3x +  5y &amp;= 7 \\
+       11x + 13y &amp;= 17
+    \end {align*}</code></pre>
+<section class="footer">
+<a href="/y21-il1j/">情報リテラシ第一</a> / <a href="/y21-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

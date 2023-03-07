@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>数式</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y21-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y21-il1j/lib/js/il.js"></script>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="/y21-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y21-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">数式</h1>
+</header>
+<section class="header">
+<a href="/y21-il1j">情報リテラシ第一</a> / <a href="/y21-il2j">情報リテラシ第二</a>
+</section>
+<p>数式を書くための３種類の記述方法</p>
+<ol type="1">
+<li><p><code>$数式の記述$</code> – 「変数<span class="math inline">\(x\)</span>について方程式<span class="math inline">\(ax^2 + bx + c = 0\)</span>を解きなさい」のように，文の一部として埋め込まれた数式を記述するときは，ふたつの<code>$</code>で数式の記述を挟んで記述します．この例では<code>$x$</code>や<code>$ax^2 + bx + c = 0$</code>と記述します．</p></li>
+<li><p><code>\[ 数式の記述 \]</code> – 文に埋め込まれた数式はあまり目立ちませんし，行の高さの制限があるので文のなかに複雑な数式を書くことができません．特に重要な数式や複雑な数式は段落から独立させた見かけの立派な数式として記述します．このような場合には<code>\[</code>と<code>\]</code>で数式の記述を挟みます．</p></li>
+<li><p>連立方程式と連立不等式など – 上述のふたつの書式では一行で書ける数式しか表現できません．連立方程式や連立不等式のように複数行にわたるものは，別の書式を用います．<code>\begin {align} ... \end {align}</code>を用いる方法を使って下さい．</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode tex"><code class="sourceCode latex"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">\begin</span> {<span class="ex">align</span>}</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="ss">    x^2 + y^2 &amp;= z^2  </span><span class="sc">\\</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="ss">    x^3 + y^3 &amp;&lt; z^3 + w^3 </span><span class="sc">\\</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="ss">          y^4 &amp;&gt; x^5</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">\end</span> {<span class="ex">align</span>}</a></code></pre></div>
+<p><span class="math inline">\(\begin {align}  x^2 + y^2 &amp;= z^2 \\  x^3 + y^3 &amp;&lt; z^3 + w^3 \\  y^4 &amp;&gt; z^4  \end {align}\)</span></p></li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\LaTeX\)</span>形式の数式の記述</th>
+<th><span class="math inline">\(\LaTeX\)</span>が出力する数式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$(a^2 + 2ab + b^2)$を因数分解せよ．</code></td>
+<td><span class="math inline">\((a^2 + 2ab + b^2)\)</span> を因数分解せよ．</td>
+</tr>
+<tr class="even">
+<td><code>5の階乗，すなわち$t!$は以下のように求めることができる：</code></td>
+<td>5の階乗，すなわち <span class="math inline">\(t!\)</span> は以下のように求めることができる：</td>
+</tr>
+<tr class="odd">
+<td><code>\[ 5! = 1 \times 2 \times 3 \times 4 \times 5 \]</code></td>
+<td><span class="math inline">\(5! = 1 \times 2 \times 3 \times 4 \times 5\)</span></td>
+</tr>
+</tbody>
+</table>
+<h1 id="さまざまな数式">5.7.1 さまざまな数式</h1>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\LaTeX\)</span>形式の数式の記述</th>
+<th><span class="math inline">\(\LaTeX\)</span>が出力する数式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>e^{2x}</code></td>
+<td><span class="math inline">\(e^{2x}\)</span></td>
+</tr>
+<tr class="even">
+<td><code>x^3 + ax \approx x^3</code></td>
+<td><span class="math inline">\(x^3 + ax \approx x^3\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>a_1, a_2, \ldots, a_n</code></td>
+<td><span class="math inline">\(a_1, a_2, \ldots, a_n\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\frac {1} {5}</code></td>
+<td><span class="math inline">\(\frac {1} {5}\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>((x^2)^3)^4</code></td>
+<td><span class="math inline">\(((x^2)^3)^4\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\left( \left( x^2 \right)^3 \right)^4</code></td>
+<td><span class="math inline">\(\left( \left( x^2 \right)^3 \right)^4\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>x^2 + {y'}^2 + {z''}^2</code></td>
+<td><span class="math inline">\(x^2 + {y&#39;}^2 + {z&#39;&#39;}^2\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\frac {(x + 1)(x - 1)} {x^2}</code></td>
+<td><span class="math inline">\(\frac {(x + 1)(x - 1)} {x^2}\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\sqrt {x + 2}</code></td>
+<td><span class="math inline">\(\sqrt {x + 2}\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\root n \of {x^n + y^n}</code></td>
+<td><span class="math inline">\(\root n \of {x^n + y^n}\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\sum_{i=1}^{n} x_i^2</code></td>
+<td><span class="math inline">\(\sum_{i=1}^{n} x_i^2\)</span></td>
+</tr>
+<tr class="even">
+<td><code>\int_0^t\frac {\sin x} {x^2} dx</code></td>
+<td><span class="math inline">\(\int_0^t\frac {\sin x} {x^2} dx\)</span></td>
+</tr>
+<tr class="odd">
+<td><code>\lim_{n\rightarrow\infty} x_i^2</code></td>
+<td><span class="math inline">\(\lim_{n\rightarrow\infty} x_i^2\)</span></td>
+</tr>
+</tbody>
+</table>
+<h1 id="行列と行列式">5.7.2 行列と行列式</h1>
+<div class="sourceCode" id="cb2"><pre class="sourceCode tex"><code class="sourceCode latex"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="ss">\[ </span><span class="sc">\begin</span><span class="ss"> {pmatrix} </span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="ss">    x_{11} &amp; </span><span class="sc">\cdots</span><span class="ss"> &amp; x_{15} </span><span class="sc">\\</span><span class="ss"> </span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="ss">    </span><span class="sc">\vdots</span><span class="ss"> &amp; </span><span class="sc">\ddots</span><span class="ss"> &amp; </span><span class="sc">\vdots</span><span class="ss"> </span><span class="sc">\\</span><span class="ss"> </span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="ss">    x_{51} &amp; </span><span class="sc">\cdots</span><span class="ss"> &amp; x_{55} </span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="sc">\end</span><span class="ss"> {pmatrix} \]</span></a></code></pre></div>
+<p><span class="math inline">\(\begin {pmatrix}  x_{11} &amp; \cdots &amp; x_{15} \\  \vdots &amp; \ddots &amp; \vdots \\  x_{51} &amp; \cdots &amp; x_{55} \end {pmatrix}\)</span></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode tex"><code class="sourceCode latex"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ss">\[ </span><span class="sc">\begin</span><span class="ss"> {vmatrix}</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="ss">    x_{11} &amp; </span><span class="sc">\cdots</span><span class="ss"> &amp; x_{15} </span><span class="sc">\\</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="ss">    </span><span class="sc">\vdots</span><span class="ss"> &amp; </span><span class="sc">\ddots</span><span class="ss"> &amp; </span><span class="sc">\vdots</span><span class="ss"> </span><span class="sc">\\</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="ss">    x_{51} &amp; </span><span class="sc">\cdots</span><span class="ss"> &amp; x_{55}</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="sc">\end</span><span class="ss"> {vmatrix} \]</span></a></code></pre></div>
+<p><span class="math inline">\(\begin {vmatrix}  x_{11} &amp; \cdots &amp; x_{15} \\  \vdots &amp; \ddots &amp; \vdots \\  x_{51} &amp; \cdots &amp; x_{55} \end {vmatrix}\)</span></p>
+<p><a href="https://www.amazon.co.jp/dp/4274216020">参考書</a>の図5.8, 図5.9には条件式や等式、不等式の書き方などが紹介されています．</p>
+<section class="footer">
+<a href="/y21-il1j/">情報リテラシ第一</a> / <a href="/y21-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>

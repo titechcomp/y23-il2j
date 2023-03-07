@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>数式内におけるフォント</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="/y21-il1j/lib/js/jquery.min.js"></script>
+  <script src="/y21-il1j/lib/js/il.js"></script>
+  <link rel="stylesheet" href="/y21-il1j/lib/css/solarized.css">
+  <link rel="stylesheet" href="/y21-il1j/lib/css/page.css">
+  <link ref="shortcut icon" type="image/png" href="favicon.png">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">数式内におけるフォント</h1>
+</header>
+<section class="header">
+<a href="/y21-il1j">情報リテラシ第一</a> / <a href="/y21-il2j">情報リテラシ第二</a>
+</section>
+<h1 id="数式中に文字を書くために">数式中に文字を書くために</h1>
+<p>数式モードのなかで、文字を書くと個々の数字は数式の変数という扱いになります。また、いくつかの文字を並べるとそれらはいくつかの変数の積として扱われ、通常の文章中での間隔よりも広い幅に配置されます。たとえば、以下のtexファイルには二箇所に“efficiency”という記述が現れます。前者は<code>\textit</code>コマンドを利用してイタリック書体で出力され、後者は数式中の変数なのでやはりイタリック書体で出力されます。ところが、実際にこれを platex で処理し、画面を眺めると、数式として処理される後者はひどく間の抜けた感じになります。</p>
+<pre><code>\documentclass {jarticle}
+\begin {document}
+\textit {efficiency}
+ 
+$efficiency$
+\end {document}</code></pre>
+<p>数式のなかに変数ではない文字列を挿入する場合には<code>\mathrm</code>, <code>\mathbf</code>, <code>\mathit</code>, <code>\mathsf</code>などのコマンドを用います。それぞれ、ローマン体、ボールド体（太字）、イタリック体、サンセリフ体で出力します。たとえば、以下のように使います。</p>
+<pre><code>\[ G^n_{\mathrm {mixi}} \]</code></pre>
+<p>tex ファイルの冒頭で<code>\usepackage {amsmath}</code>宣言をしている場合には、<code>\text</code>コマンドが利用できます。</p>
+<section class="footer">
+<a href="/y21-il1j/">情報リテラシ第一</a> / <a href="/y21-il2j/">情報リテラシ第二</a>
+</section>
+</body>
+</html>
